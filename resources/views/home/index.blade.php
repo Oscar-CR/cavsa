@@ -1,20 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto mt-4">
+@include('components.header') 
+<div class="container mx-auto mt-4 w-full">
+
     <div class="bg-white rounded-lg shadow-lg p-6">
-        <h1 class="text-2xl font-semibold mb-4">Bienvenido a Mi Sitio</h1>
+        <h1 class="text-2xl font-bold mb-4">¡Hola {{isset(Auth()->user()->name)? Auth()->user()->name : 'usuario' }}!</h1>
         
-        <p class="text-gray-700">Este es el contenido de la página de inicio. Puedes personalizar esta sección según tus necesidades.</p>
-        
-        <div class="mt-4">
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">
-                    Cerrar Sesión
-                </button>
-            </form>
+        <p class="text-gray-700">Seleccionar una opción</p>
+
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Columna 1 -->
+            <div class="bg-gray-200 p-4">
+                <!-- Contenido de la columna 1 -->
+                Columna 1
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="bg-gray-200 p-4">
+                <!-- Contenido de la columna 2 -->
+                Columna 2
+            </div>
         </div>
+        
+        
     </div>
 </div>
 @endsection
