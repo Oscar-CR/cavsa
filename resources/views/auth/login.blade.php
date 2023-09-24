@@ -2,8 +2,9 @@
 
 @section('content')
 
-<div class="w-28 m-10" style="position:absolute;">
-    <img src="{{ asset('/img/cavsa.png')}}" alt="logo">
+<div class="relative">
+    <img src="{{ asset('/img/cavsa.png')}}" alt="logo" class="absolute top-0 left-0 w-28 m-10">
+    <img src="{{ asset('/img/infinitum.png')}}" alt="logo" class="absolute top-0 right-0 w-40 m-10 mr-20">
 </div>
    
 <div class="flex justify-center items-center h-screen">
@@ -17,9 +18,9 @@
 
             <!-- Email Address -->
             <div class="mt-8">
-                <label for="email" class="block font-medium text-gray-700 font-bold text-xl">Número de técnico</label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
-                    class="block w-full mt-1 px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2] sm:text-sm @error('email') border-red-500 @enderror">
+                <label for="technical_number" class="block font-medium text-gray-700 font-bold text-xl">Número de técnico</label>
+                <input id="technical_number" type="text" name="technical_number" value="{{ old('technical_number') }}" required autofocus
+                    class="block w-full mt-1 px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2] sm:text-sm @error('technical_number') border-red-500 @enderror">
                 @error('email')
                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                 @enderror

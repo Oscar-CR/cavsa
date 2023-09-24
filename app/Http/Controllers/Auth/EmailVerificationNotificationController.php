@@ -14,11 +14,11 @@ class EmailVerificationNotificationController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        if ($request->user()->hasVerifiedEmail()) {
+        if ($request->user()->hasVerifiedTechnicalNumber()) { // Cambia a tu lógica de verificación personalizada
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        $request->user()->sendEmailVerificationNotification();
+        $request->user()->sendTechnicalNumberVerificationNotification(); // Cambia a tu lógica de envío de notificación
 
         return back()->with('status', 'verification-link-sent');
     }

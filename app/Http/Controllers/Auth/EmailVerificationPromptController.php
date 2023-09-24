@@ -15,8 +15,8 @@ class EmailVerificationPromptController extends Controller
      */
     public function __invoke(Request $request): RedirectResponse|View
     {
-        return $request->user()->hasVerifiedEmail()
+        return $request->user()->hasVerifiedTechnicalNumber()
                     ? redirect()->intended(RouteServiceProvider::HOME)
-                    : view('auth.verify-email');
+                    : view('auth.verify-email'); // Asegúrate de que tu vista 'auth.verify-email' esté configurada para mostrar la verificación de technical_number en lugar de correo electrónico.
     }
 }

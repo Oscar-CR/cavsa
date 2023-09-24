@@ -19,10 +19,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
+        'lastname',
+        'cope_labor',
+        'technical_number',
         'password',
     ];
-
+ 
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -38,7 +40,15 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+   
+
+    protected $dates = [
+        'technical_number_verified_at',
     ];
+    
+
+    public function hasVerifiedTechnicalNumber()
+    {
+        return ! is_null($this->technical_number_verified_at);
+    }
 }
