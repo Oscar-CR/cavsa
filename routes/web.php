@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+
+    Route::get('/fibra', [OrdersController::class, 'fibra'])->name('home.fibra');
+    Route::get('/cobre', [OrdersController::class, 'cobre'])->name('home.cobre');
+
+
+    
 
 });
 
