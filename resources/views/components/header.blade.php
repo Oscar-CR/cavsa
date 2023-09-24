@@ -7,6 +7,10 @@
         
 
         <div class="flex items-center space-x-6">
+        
+            @if(auth()->user()->hasRole('admin'))
+                <span class="text-gray-700">Administrador</span>
+            @endif
             <span class="text-gray-700">Mi Cuenta</span>
             <a href="{{ route('logout') }}" class="text-red-500 hover:text-red-600" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Cerrar Sesión
