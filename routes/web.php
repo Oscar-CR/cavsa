@@ -31,7 +31,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
     Route::get('/fibra', [OrdersController::class, 'fibra'])->name('home.fibra');
+    Route::get('/fibra-create', [OrdersController::class, 'fibraCreate'])->name('home.fibra.create');
+    Route::get('/fibra-store', [OrdersController::class, 'fibraStore'])->name('home.fibra.store');
+
     Route::get('/cobre', [OrdersController::class, 'cobre'])->name('home.cobre');
+    Route::get('/cobre-create', [OrdersController::class, 'cobreCreate'])->name('home.cobre.create');
 
 
     
