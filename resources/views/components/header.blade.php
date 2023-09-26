@@ -1,5 +1,5 @@
 <header class="bg-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center py-3">
+    <div class="container mx-auto flex justify-between items-center py-3 px-8">
         
         <a href="{{ route('home.index') }}" class="text-blue-500 text-2xl font-semibold">
             <img src="{{ asset('img/cavsa.png') }}" alt="Logo" class="h-16">

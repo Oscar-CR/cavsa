@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return ! is_null($this->technical_number_verified_at);
     }
+
+    public function user()
+    {
+        return $this->hasMany(FibraOrder::class);
+    }
 }

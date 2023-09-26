@@ -576,9 +576,9 @@
                                 <label for="si_no">Activado:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="radio" id="si" name="si" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                                <label for="si">Si</label>
-                                <input type="radio" id="no" name="no" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                <input type="radio" id="si" name="activado" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                <label for="si" class="mr-4">Si</label>
+                                <input type="radio" id="no" name="activado" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 <label for="no">No</label>
                             </div>
                         </div>
@@ -604,22 +604,13 @@
                                 <input type="time" id="hora_liquidacion" name="hora_liquidacion" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
-                        
-                        <div class="flex justify-between">
-                            <div class="p-4">
-                                <label for="nombre_tecnico">Nombre y Firma de Técnico:</label>
-                            </div>
-                            <div class="p-4 mr-2">
-                                <input type="text" id="nombre_tecnico" name="nombre_tecnico" rows="2" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 
             </fieldset>
             
-            <button class="w-full bg-[#0172C2] text-white h-10 rounded mt-12" type="submit">GUARDAR</button>
+            <button class="w-full bg-[#0172C2] hover:bg-[#189FFF] text-white h-10 rounded mt-12" type="submit">GUARDAR</button>
         </form>
         
        

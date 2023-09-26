@@ -58,14 +58,14 @@ return new class extends Migration
             $table->boolean('tipo_residencial')->default(false);
             $table->boolean('tipo_aerea')->default(false);
             $table->boolean('tipo_subterraneo')->default(false);
-            $table->string('longitud_acum_tel')->default('0');
+            $table->string('longitud_acum_tel')->nullable();
             $table->boolean('fibra_25m_tel')->default(0);
             $table->integer('fibra_50m_tel')->default(0);
             $table->integer('fibra_75m_tel')->default(0);
             $table->integer('fibra_100m_tel')->default(0);
             $table->integer('fibra_125m_tel')->default(0);
             $table->integer('metral_bobina_tel')->default(0);
-            $table->string('longitud_acum_huawei')->default('0');
+            $table->string('longitud_acum_huawei')->nullable();
             $table->boolean('cord_prec_25m_huawei')->default(false);
             $table->boolean('cord_prec_50m_huawei')->default(false);
             $table->boolean('cord_prec_80m_huawei')->default(false);
@@ -80,11 +80,11 @@ return new class extends Migration
             $table->string('observaciones')->nullable();
             $table->string('correo_electronico')->nullable();
             $table->string('clarovideo')->nullable();
-            $table->boolean('si')->default(false);
-            $table->boolean('no')->default(false);
+            $table->boolean('activado')->default(false);
             $table->time('hora_generacion_portal')->nullable();
             $table->time('hora_liquidacion')->nullable();
-            $table->string('nombre_tecnico');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

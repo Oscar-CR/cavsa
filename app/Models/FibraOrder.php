@@ -77,12 +77,14 @@ class FibraOrder extends Model
         'observaciones',
         'correo_electronico',
         'clarovideo',
-        'si',
-        'no',
+        'activado',
         'hora_generacion_portal',
         'hora_liquidacion',
-        'nombre_tecnico',
+        'user_id',
     ];
 
-
+    public function user()
+    {
+        return $this->hasOne(User::class, 'user_id');
+    }
 }

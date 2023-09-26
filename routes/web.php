@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CobreController;
+use App\Http\Controllers\FibraController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\ProfileController;
@@ -30,12 +32,15 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index'])->name('home.index');
 
-    Route::get('/fibra', [OrdersController::class, 'fibra'])->name('home.fibra');
-    Route::get('/fibra-create', [OrdersController::class, 'fibraCreate'])->name('home.fibra.create');
-    Route::get('/fibra-store', [OrdersController::class, 'fibraStore'])->name('home.fibra.store');
+    Route::get('/fibra', [FibraController::class, 'fibra'])->name('home.fibra');
+    Route::get('/fibra-create', [FibraController::class, 'fibraCreate'])->name('home.fibra.create');
+    Route::post('/fibra-store', [FibraController::class, 'fibraStore'])->name('home.fibra.store');
+    Route::post('/fibra-edit', [FibraController::class, 'fibraEdit'])->name('home.fibra.edit');
+    Route::delete('/fibra-delete', [FibraController::class, 'fibraDelete'])->name('home.fibra.delete');
 
-    Route::get('/cobre', [OrdersController::class, 'cobre'])->name('home.cobre');
-    Route::get('/cobre-create', [OrdersController::class, 'cobreCreate'])->name('home.cobre.create');
+
+    Route::get('/cobre', [CobreController::class, 'cobre'])->name('home.cobre');
+    Route::get('/cobre-create', [CobreController::class, 'cobreCreate'])->name('home.cobre.create');
 
 
     
