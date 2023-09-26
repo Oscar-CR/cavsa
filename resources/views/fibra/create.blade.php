@@ -295,7 +295,7 @@
                                     <label for="tipo_negocio">Negocio:</label>
                                 </div>
                                 <div class="pt-10">
-                                    <input class="w-20 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" type="text" id="tipo_negocio" name="tipo_negocio">
+                                    <input class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" type="checkbox" id="tipo_negocio" name="tipo_negocio">
                                 </div>
                             </div>
 
@@ -474,15 +474,6 @@
                             
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="cord_prec_100m_huawei">Cord Prec 100m:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_100m_huawei" name="cord_prec_100m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                                </div>
-                            </div>
-                            
-                            <div class="flex justify-between">
-                                <div class="pt-4">
                                     <label for="cord_prec_120m_huawei">Cord Prec 120m:</label>
                                 </div>
                                 <div class="pt-4">
@@ -570,17 +561,7 @@
                                 <input type="text" id="correo_electronico" name="correo_electronico" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
-                     
-                        <div class="flex justify-between">
-                            <div class="pt-4">
-                                <label for="correo_electronico">Correo Electrónico:</label>
-                            </div>
-                            <div class="pt-4 mr-8">
-                                <input type="text" id="correo_electronico" name="correo_electronico" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                            </div>
-                        </div>
-                        
-                     
+
                         <div class="flex justify-between">
                             <div class="pt-4">
                                 <label for="clarovideo">Clarovideo:</label>
@@ -592,12 +573,12 @@
                         
                         <div class="flex justify-between">
                             <div class="pt-4">
-                                
+                                <label for="si_no">Activado:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="radio" id="si" name="si_no" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                <input type="radio" id="si" name="si" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 <label for="si">Si</label>
-                                <input type="radio" id="no" name="si_no" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                <input type="radio" id="no" name="no" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 <label for="no">No</label>
                             </div>
                         </div>
