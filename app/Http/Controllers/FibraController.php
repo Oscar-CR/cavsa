@@ -11,9 +11,9 @@ class FibraController extends Controller
     public function fibra() {
 
         if(auth()->user()->hasRole('admin')){
-            $fibraOrders = FibraOrder::simplePaginate(15);
+            $fibraOrders = FibraOrder::all();
         }else{
-            $fibraOrders = FibraOrder::where('id', Auth()->user()->id)->get()->simplePaginate(15);
+            $fibraOrders = FibraOrder::where('id', Auth()->user()->id)->get();
         }
         
         return view('fibra.index', compact('fibraOrders'));

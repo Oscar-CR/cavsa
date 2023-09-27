@@ -41,6 +41,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/cobre', [CobreController::class, 'cobre'])->name('home.cobre');
     Route::get('/cobre-create', [CobreController::class, 'cobreCreate'])->name('home.cobre.create');
+    Route::post('/cobre-store', [CobreController::class, 'cobreStore'])->name('home.cobre.store');
+    Route::post('/cobre-edit', [CobreController::class, 'cobreEdit'])->name('home.cobre.edit');
+    Route::delete('/cobre-delete', [CobreController::class, 'cobreDelete'])->name('home.cobre.delete');
 
 
     
