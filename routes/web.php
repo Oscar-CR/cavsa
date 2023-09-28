@@ -35,14 +35,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/fibra', [FibraController::class, 'fibra'])->name('home.fibra');
     Route::get('/fibra-create', [FibraController::class, 'fibraCreate'])->name('home.fibra.create');
     Route::post('/fibra-store', [FibraController::class, 'fibraStore'])->name('home.fibra.store');
-    Route::post('/fibra-edit', [FibraController::class, 'fibraEdit'])->name('home.fibra.edit');
+    Route::get('/fibra-edit/{id}', [FibraController::class, 'fibraEdit'])->name('home.fibra.edit');
+    Route::post('/fibra-update', [FibraController::class, 'fibraUpdate'])->name('home.fibra.update');
     Route::delete('/fibra-delete', [FibraController::class, 'fibraDelete'])->name('home.fibra.delete');
 
 
     Route::get('/cobre', [CobreController::class, 'cobre'])->name('home.cobre');
     Route::get('/cobre-create', [CobreController::class, 'cobreCreate'])->name('home.cobre.create');
     Route::post('/cobre-store', [CobreController::class, 'cobreStore'])->name('home.cobre.store');
-    Route::post('/cobre-edit', [CobreController::class, 'cobreEdit'])->name('home.cobre.edit');
+    Route::get('/cobre-edit/{id}', [CobreController::class, 'cobreEdit'])->name('home.cobre.edit');
+    Route::post('/cobre-update', [CobreController::class, 'cobreUpdate'])->name('home.cobre.update');
     Route::delete('/cobre-delete', [CobreController::class, 'cobreDelete'])->name('home.cobre.delete');
 
 

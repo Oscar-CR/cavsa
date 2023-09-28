@@ -106,9 +106,22 @@ class FibraController extends Controller
         
     }
 
-    public function fibraEdit(){
-        return view('fibra.create');
+    public function fibraEdit($id){
+
+        $fibraOrder = FibraOrder::where('id',$id)->get()->first();
+        return view('fibra.edit', compact('fibraOrder'));
     }
+
+    public function fibraUpdate(Request $request){
+        DB::table('fibra_order')->where('id',$request->id)->update([
+
+        ]);
+       /*  $fibraOrder = FibraOrder::where('id',$id)->get()->first(); */
+        return redirect()->action([FibraController::class, 'fibra'])->with('msg', 'Solicitud actualizada con exito');
+    }
+
+
+    
 
     public function fibraDelete(){
         return view('fibra.create');
