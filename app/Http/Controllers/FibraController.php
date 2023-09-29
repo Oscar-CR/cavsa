@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\FibraOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class FibraController extends Controller
 {
@@ -14,6 +15,7 @@ class FibraController extends Controller
             $fibraOrders = FibraOrder::all();
         }else{
             $fibraOrders = FibraOrder::where('id', Auth()->user()->id)->get();
+
         }
         
         return view('fibra.index', compact('fibraOrders'));
@@ -113,8 +115,75 @@ class FibraController extends Controller
     }
 
     public function fibraUpdate(Request $request){
-        DB::table('fibra_order')->where('id',$request->id)->update([
-
+        DB::table('fibra_order')->where('id', $request->id)->update([
+            'telefono' => $request->telefono,
+            'tipo_os' => $request->tipo_os,
+            'numero_os' => $request->numero_os,
+            'status' => $request->status,
+            'pysa' => $request->pysa,
+            'hora_llegada' => $request->hora_llegada,
+            'fecha' => $request->fecha,
+            'folio_tec' => $request->folio_tec,
+            'nombre_cliente' => $request->nombre_cliente,
+            'direccion' => $request->direccion,
+            'entre_calles' => $request->entre_calles,
+            'colonia' => $request->colonia,
+            'edificio' => $request->edificio,
+            'depto' => $request->depto,
+            'portalera' => $request->portalera,
+            'distrito' => $request->distrito,
+            'terminal' => $request->terminal,
+            'puerto' => $request->puerto,
+            'potencia' => $request->potencia,
+            'navegacion' => $request->navegacion,
+            'argolla_caja_exedente' => $request->argolla_caja_exedente,
+            'cierre_conexion' => $request->cierre_conexion,
+            'cincho_negro' => $request->cincho_negro,
+            'clip_adherible' => $request->clip_adherible,
+            'cadena_distribucion' => $request->cadena_distribucion,
+            'argolla_fleje' => $request->argolla_fleje,
+            'conector_mecanico' => $request->conector_mecanico,
+            'ont' => $request->ont,
+            'roceta_optica' => $request->roceta_optica,
+            'sello_pasa_muro' => $request->sello_pasa_muro,
+            'sujetador_clavo' => $request->sujetador_clavo,
+            'taquete' => $request->taquete,
+            'gancho_tensor' => $request->gancho_tensor,
+            'cinta_aislar' => $request->cinta_aislar,
+            'cordones_telmex' => $request->cordones_telmex,
+            'cordones_huawei' => $request->cordones_huawei,
+            'tipo_negocio' => isset($request->tipo_negocio)? true: false,
+            'tipo_casa' => isset($request->tipo_casa)? true: false,
+            'tipo_edificios' => isset($request->tipo_edificios)? true: false,
+            'tipo_plaza' =>  isset($request->tipo_plaza)? true: false,
+            'tipo_residencial' => isset($request->tipo_residencial)? true: false,
+            'tipo_aerea' => isset($request->tipo_aerea)? true: false,
+            'tipo_subterraneo' => isset($request->tipo_subterraneo)? true: false,
+            'longitud_acum_tel' => $request->longitud_acum_tel,
+            'fibra_25m_tel' => isset($request->fibra_25m_tel)? true: false,
+            'fibra_50m_tel' => isset($request->fibra_50m_tel)? true: false,
+            'fibra_75m_tel' =>  isset($request->fibra_75m_tel)? true: false,
+            'fibra_100m_tel' => isset($request->fibra_100m_tel)? true: false,
+            'fibra_125m_tel' =>  isset($request->fibra_125m_tel)? true: false,
+            'metral_bobina_tel' => $request->metral_bobina_tel? true: false,
+            'longitud_acum_huawei' => $request->longitud_acum_huawei,
+            'cord_prec_25m_huawei' => isset($request->cord_prec_25m_huawei)? true: false,
+            'cord_prec_50m_huawei' =>  isset($request->cord_prec_50m_huawei)? true: false,
+            'cord_prec_80m_huawei' =>  isset($request->cord_prec_80m_huawei)? true: false,
+            'cord_prec_100m_huawei' => isset($request->cord_prec_100m_huawei)? true: false,
+            'cord_prec_120m_huawei' => isset($request->cord_prec_120m_huawei)? true: false,
+            'cord_prec_150m_huawei' => isset($request->cord_prec_150m_huawei)? true: false,
+            'cord_prec_200m_huawei' => isset($request->cord_prec_200m_huawei)? true: false,
+            'numero_serie' => $request->numero_serie,
+            'alfanumerico' => $request->alfanumerico,
+            'key' => $request->key,
+            'ont_cobre' => $request->ont_cobre,
+            'observaciones' => $request->observaciones,
+            'correo_electronico' => $request->correo_electronico,
+            'clarovideo' => $request->clarovideo,
+            'activado' => (isset($request->activado) && $request->activado == 'Si')? true: false,
+            'hora_generacion_portal' => $request->hora_generacion_portal,
+            'hora_liquidacion' => $request->hora_liquidacion,
         ]);
        /*  $fibraOrder = FibraOrder::where('id',$id)->get()->first(); */
         return redirect()->action([FibraController::class, 'fibra'])->with('msg', 'Solicitud actualizada con exito');

@@ -115,6 +115,92 @@ class CobreController extends Controller
         return view('fibra.create');
     }
 
+    public function cobreUpdate(Request $request){
+        
+        DB::table('cobre_order')->where('id', $request->id)->update([
+            'telefono' => $request->telefono,
+            'tipo_os' => $request->tipo_os,
+            'numero_os' => $request->numero_os,
+            'status' => $request->status,
+            'pysa' => $request->pysa,
+            'hora_llegada' => $request->hora_llegada,
+            'fecha' => $request->fecha,
+            'folio_tec' => $request->folio_tec,
+            'nombre_cliente' => $request->nombre_cliente,
+            'direccion' => $request->direccion,
+            'entre_calles' => $request->entre_calles,
+            'colonia' => $request->colonia,
+            'edificio' => $request->edificio,
+            'depto' => $request->depto,
+            'portalera' => $request->portalera,
+            'distrito' => $request->distrito,
+            'terminal' => $request->terminal,
+            'puerto' => $request->puerto,
+            'potencia' => $request->potencia,
+            'navegacion' => $request->navegacion,
+            'argolla' => $request->argolla,
+            'dit_spliter_con_proteccion' => $request->dit_spliter_con_proteccion,
+            'muela' => $request->muela,
+            'cincho_negro' => $request->cincho_negro,
+            'clip_adherible' => $request->clip_adherible,
+            'cadena_distribucion' => $request->cadena_distribucion,
+            'argolla_fleje' => $request->argolla_fleje,
+            'taquete' => $request->taquete,
+            'modem' => $request->modem,
+            'sujetador_p_cor_int_ext' => $request->sujetador_p_cor_int_ext,
+            'sujetador_p_cor_acom_de_2_pares' => $request->sujetador_p_cor_acom_de_2_pares,
+            'roseta' => $request->roseta,
+            'sello_pasamuro' => $request->sello_pasamuro,
+            'cable_rj11' => $request->cable_rj11,
+            'cord_cafe_naranja' => $request->cord_cafe_naranja,
+            'cord_naranja_blanco' => $request->cord_naranja_blanco,
+            'cord_rojo_blanco' => $request->cord_rojo_blanco,
+            'gancho_tensor' => $request->gancho_tensor,
+            'cinta_de_aislar' => $request->cinta_de_aislar,
+            'tubo_ranurado' => $request->tubo_ranurado,
+            'lubricante' => $request->lubricante,
+            'cord_marfil_metros' => $request->cord_marfil_metros,
+            'longitud_acometida_metros' => $request->longitud_acometida_metros,
+
+            'tipo_negocio' => isset($request->tipo_negocio)? true: false,
+            'tipo_casa' => isset($request->tipo_casa)? true: false,
+            'tipo_edificios' => isset($request->tipo_edificios)? true: false,
+            'tipo_plaza' => isset($request->tipo_plaza)? true: false,
+            'tipo_residencial' => isset($request->tipo_residencial)? true: false,
+            'tipo_aerea' => isset($request->tipo_aerea)? true: false,
+            'tipo_subterraneo' => isset($request->tipo_subterraneo)? true: false,
+            'longitud_acum_tel' => $request->longitud_acum_tel,
+
+            'fibra_25m_tel' => isset($request->fibra_25m_tel)? true: false,
+            'fibra_50m_tel' => isset($request->fibra_50m_tel)? true: false,
+            'fibra_75m_tel' => isset($request->fibra_75m_tel)? true: false,
+            'fibra_100m_tel' => isset($request->fibra_100m_tel)? true: false,
+            'fibra_125m_tel' => isset($request->fibra_125m_tel)? true: false,
+            'metral_bobina_tel' => $request->metral_bobina_tel? true: false,
+            'longitud_acum_huawei' => $request->longitud_acum_huawei,
+
+            'cord_prec_25m_huawei' => isset($request->cord_prec_25m_huawei)? true: false,
+            'cord_prec_50m_huawei' => isset($request->cord_prec_50m_huawei)? true: false,
+            'cord_prec_80m_huawei' => isset($request->cord_prec_80m_huawei)? true: false,
+            'cord_prec_100m_huawei' => isset($request->cord_prec_100m_huawei)? true: false,
+            'cord_prec_120m_huawei' => isset($request->cord_prec_120m_huawei)? true: false,
+            'cord_prec_150m_huawei' => isset($request->cord_prec_150m_huawei)? true: false,
+            'cord_prec_200m_huawei' => isset($request->cord_prec_200m_huawei)? true: false,
+
+            'numero_serie' => $request->numero_serie,
+            'alfanumerico' => $request->alfanumerico,
+            'key' => $request->key,
+            'ont_cobre' => $request->ont_cobre,
+            'observaciones' => $request->observaciones,
+            'correo_electronico' => $request->correo_electronico,
+            'clarovideo' => $request->clarovideo,
+            'activado' => (isset($request->activado) && $request->activado == 'Si')? true: false,
+            'hora_generacion_portal' => $request->hora_generacion_portal,
+            'hora_liquidacion' => $request->hora_liquidacion,
+        ]);
+        return redirect()->action([CobreController::class, 'cobre'])->with('msg', 'Solicitud actualizada con exito');
+    }
+
     public function cobreDelete(){
         return view('fibra.create');
     }

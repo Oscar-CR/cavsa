@@ -8,7 +8,7 @@
 
         <div class="flex justify-between">
             <div class="pt-4">
-                <h1 class="text-2xl font-bold mb-12">Editar orden de servicio (fibra)</h1>
+                <h1 class="text-2xl font-bold mb-12">Nueva orden de servicio (cobre)</h1>
             </div>
             <div class="pt-4">
                 <img src="{{ asset('img/infinitum.png')}}" alt="logo" class="w-40">
@@ -16,9 +16,9 @@
         </div>
         
 
-        <form action="{{ route('home.fibra.update', ['id' => $fibraOrder->id, 'user_id' => $fibraOrder->user_id  ] ) }}" method="POST">
+        <form action="{{ route('home.cobre.store') }}" method="POST">
         @csrf
-       
+
             <!-- Sección 1 -->
             <fieldset class="bg-[#FCFEFF] p-4 rounded">
                 <!-- <legend class="pt-12">Section 1</legend> -->
@@ -26,31 +26,31 @@
                     <div class="col-span-1">
                         
                         <label for="telefono">Telefono:</label>
-                        <input type="text" id="telefono" name="telefono" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->telefono)? $fibraOrder->telefono : ''}}">
+                        <input type="text" id="telefono" name="telefono" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="tipo_os">Tipo O.S:</label>
-                        <input type="text" id="tipo_os" name="tipo_os" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->tipo_os)? $fibraOrder->tipo_os : ''}}">
+                        <input type="text" id="tipo_os" name="tipo_os" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="os_number">Nº de O.S.:</label>
-                        <input type="text" id="numero_os" name="numero_os" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->numero_os)? $fibraOrder->numero_os : ''}}">
+                        <input type="text" id="numero_os" name="numero_os" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                     <div class="col-span-1">
                         <label for="status">Status:</label>
-                        <input type="text" id="status" name="status" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->status)? $fibraOrder->status : ''}}">
+                        <input type="text" id="status" name="status" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                         
                         <label for="pysa">Pysa:</label>
-                        <input type="text" id="pysa" name="pysa" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]"  value="{{ isset($fibraOrder->pysa)? $fibraOrder->pysa : ''}}">
+                        <input type="text" id="pysa" name="pysa" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                    
                     <div class="col-span-1">
                         <label for="hora_llegada">Hora de llegada:</label>
-                        <input type="time" id="hora_llegada" name="hora_llegada" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->hora_llegada)? $fibraOrder->hora_llegada : ''}}">
+                        <input type="time" id="hora_llegada" name="hora_llegada" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="fecha">Fecha:</label>
-                        <input type="date" id="fecha" name="fecha" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->fecha)? $fibraOrder->fecha : ''}}">
+                        <input type="date" id="fecha" name="fecha" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="folio_tec">Folio TEC:</label>
-                        <input type="text" id="folio_tec" name="folio_tec" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->folio_tec)? $fibraOrder->folio_tec : ''}}">
+                        <input type="text" id="folio_tec" name="folio_tec" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
 
                 </div>
@@ -62,33 +62,33 @@
                     <div class="col-span-1">
 
                         <label for="nombre_cliente">Nombre del cliente:</label>
-                        <input type="text" id="nombre_cliente" name="nombre_cliente" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->nombre_cliente)? $fibraOrder->nombre_cliente : ''}}">
+                        <input type="text" id="nombre_cliente" name="nombre_cliente" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="direccion">Direccion:</label>
-                        <input type="text" id="direccion" name="direccion" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->direccion)? $fibraOrder->direccion : ''}}">
+                        <input type="text" id="direccion" name="direccion" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="entre_calles">Entre calles:</label>
-                        <input type="text" id="entre_calles" name="entre_calles" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->entre_calles)? $fibraOrder->entre_calles : ''}}">
+                        <input type="text" id="entre_calles" name="entre_calles" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                     </div>
 
                     <div class="col-span-1">
                         
                         <label for="colonia">Colonia:</label>
-                        <input type="text" id="colonia" name="colonia" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->colonia)? $fibraOrder->colonia : ''}}">
+                        <input type="text" id="colonia" name="colonia" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="edificio">Edificio:</label>
-                        <input type="text" id="edificio" name="edificio" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->edificio)? $fibraOrder->edificio : ''}}">
+                        <input type="text" id="edificio" name="edificio" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                         <label for="depto">Depto:</label>
-                        <input type="text" id="depto" name="depto" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->depto)? $fibraOrder->depto : ''}}">
+                        <input type="text" id="depto" name="depto" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                     </div>
 
                     <div class="col-span-1">
    
                         <label for="portalera">Portalera:</label>
-                        <input type="text" id="portalera" name="portalera" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->portalera)? $fibraOrder->portalera : ''}}">
+                        <input type="text" id="portalera" name="portalera" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
 
                     </div>
                 </div>
@@ -100,23 +100,23 @@
                 <div class="grid grid-cols-5 gap-4">
                     <div class="col-span-1">
                         <label for="distrito">Distrito:</label>
-                        <input type="text" id="distrito" name="distrito" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->distrito)? $fibraOrder->distrito : ''}}">
+                        <input type="text" id="distrito" name="distrito" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                     <div class="col-span-1">
                         <label for="terminal">Terminal:</label>
-                        <input type="text" id="terminal" name="terminal" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->terminal)? $fibraOrder->terminal : ''}}">
+                        <input type="text" id="terminal" name="terminal" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                     <div class="col-span-1">
                         <label for="puerto">Puerto:</label>
-                        <input type="text" id="puerto" name="puerto" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->puerto)? $fibraOrder->puerto : ''}}">
+                        <input type="text" id="puerto" name="puerto" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                     <div class="col-span-1">
                         <label for="potencia">Potencia:</label>
-                        <input type="text" id="potencia" name="potencia" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->potencia)? $fibraOrder->potencia : ''}}">
+                        <input type="text" id="potencia" name="potencia" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                     <div class="col-span-1">
                         <label for="navegacion">Navegación:</label>
-                        <input type="text" id="navegacion" name="navegacion" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->navegacion)? $fibraOrder->navegacion : ''}}">
+                        <input type="text" id="navegacion" name="navegacion" class="w-full mb-4 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                     </div>
                 </div>
             </fieldset>
@@ -137,19 +137,19 @@
 
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="argolla_caja_exedente">Argolla Caja Exedente:</label>
+                                    <label for="argolla">Argolla:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="argolla_caja_exedente" name="argolla_caja_exedente" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->argolla_caja_exedente)? $fibraOrder->argolla_caja_exedente : ''}}">
+                                    <input type="number" id="argolla" name="argolla" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
 
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="cierre_conexion">Cierre Conexión:</label>
+                                    <label for="dit_spliter_con_proteccion">Dit/Spliter con Proteccion:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="cierre_conexion" name="cierre_conexion" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->cierre_conexion)? $fibraOrder->cierre_conexion : ''}}">
+                                    <input type="number" id="dit_spliter_con_proteccion" name="dit_spliter_con_proteccion" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
 
@@ -158,82 +158,52 @@
                                     <label for="cincho_negro">Cincho Negro:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="cincho_negro" name="cincho_negro" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->cincho_negro)? $fibraOrder->cincho_negro : ''}}">
+                                    <input type="number" id="cincho_negro" name="cincho_negro" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
                            
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="clip_adherible">Clip adherible:</label>
+                                    <label for="muela">Muela:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="clip_adherible" name="clip_adherible" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->clip_adherible)? $fibraOrder->clip_adherible : ''}}">
+                                    <input type="number" id="muela" name="muela" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
 
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="cadena_distribucion">Cadena de Distribucion:</label>
+                                    <label for="cincho_negro">Cincho negro:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="cadena_distribucion" name="cadena_distribucion" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->cadena_distribucion)? $fibraOrder->cadena_distribucion : ''}}">
+                                    <input type="number" id="cincho_negro" name="cincho_negro" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
                             
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="clip_adherible">Clip Adherible:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="clip_adherible" name="clip_adherible" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cadena_distribucion">Cadena Distribuciono:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="cadena_distribucion" name="cadena_distribucion" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div>
+
                             <div class="flex justify-between">
                                 <div class="pt-4">
                                     <label for="argolla_fleje">Argolla Fleje:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="argolla_fleje" name="argolla_fleje" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->argolla_fleje)? $fibraOrder->argolla_fleje : ''}}">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-span-1">
-
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="conector_mecanico">Conector Mecanico:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="number" id="conector_mecanico" name="conector_mecanico" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->conector_mecanico)? $fibraOrder->conector_mecanico : ''}}">
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="ont">ONT:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="number" id="ont" name="ont" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->ont)? $fibraOrder->ont : ''}}">
-                                </div>
-                            </div>
-                            
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="roceta_optica">Roceta Optica:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="number" id="roceta_optica" name="roceta_optica" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->roceta_optica)? $fibraOrder->roceta_optica : ''}}">
-                                </div>
-                            </div>
-
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="sello_pasa_muro">Sello Pasa Muro:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="number" id="sello_pasa_muro" name="sello_pasa_muro" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->sello_pasa_muro)? $fibraOrder->sello_pasa_muro : ''}}">
-                                </div>
-                            </div>
-                            
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="sujetador_clavo">Sujetador Clavo:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="number" id="sujetador_clavo" name="sujetador_clavo" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->sujetador_clavo)? $fibraOrder->sujetador_clavo : ''}}">
+                                    <input type="number" id="argolla_fleje" name="argolla_fleje" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
                             
@@ -242,27 +212,57 @@
                                     <label for="taquete">Taquete:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="taquete" name="taquete" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->taquete)? $fibraOrder->taquete : ''}}">
+                                    <input type="number" id="taquete" name="taquete" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
+
+
                         </div>
 
                         <div class="col-span-1">
+
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="gancho_tensor">Gancho Tensor:</label>
+                                    <label for="modem">MODEM:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="gancho_tensor" name="gancho_tensor" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->gancho_tensor)? $fibraOrder->gancho_tensor : ''}}">
+                                    <input type="number" id="modem" name="modem" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="sujetador_p_cor_int_ext">Sujetador P/Cor Int/ext:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="sujetador_p_cor_int_ext" name="sujetador_p_cor_int_ext" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="sujetador_p_cor_acom_de_2_pares">Sujetador P/Cor Acom de 2 Pares:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="sujetador_p_cor_acom_de_2_pares" name="sujetador_p_cor_acom_de_2_pares" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
 
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="cinta_aislar">Cinta de Aislar:</label>
+                                    <label for="roseta">Roseta:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="cinta_aislar" name="cinta_aislar" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->cinta_aislar)? $fibraOrder->cinta_aislar : ''}}">
+                                    <input type="number" id="roseta" name="roseta" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="sello_pasamuro">Sello Pasamuro:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="sello_pasamuro" name="sello_pasamuro" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
                             
@@ -271,18 +271,104 @@
                                     <label for="cordones_telmex">Cordones Telmex:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="cordones_telmex" name="cordones_telmex" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->cordones_telmex)? $fibraOrder->cordones_telmex : ''}}">
+                                    <input type="number" id="cordones_telmex" name="cordones_telmex" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
                             </div>
 
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="cordones_telmex">Cordones Huawei:</label>
+                                    <label for="cable_rj11">Cable RJ11:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="number" id="cordones_huawei" name="cordones_huawei" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]"  value="{{ isset($fibraOrder->cordones_huawei)? $fibraOrder->cordones_huawei : ''}}">
+                                    <input type="number" id="cable_rj11" name="cable_rj11" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
                                 </div>
-                            </div>   
+                            </div>  
+                            
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cord_cafe_naranja">Cord Café/Naranja:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="cord_cafe_naranja" name="cord_cafe_naranja" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cord_naranja_blanco">Cord Naranja/Blanco:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="cord_naranja_blanco" name="cord_naranja_blanco" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                        </div>
+
+                        <div class="col-span-1">
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cord_rojo_blanco">Cord Rojo/Blanco:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="cord_rojo_blanco" name="cord_rojo_blanco" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="gancho_tensor">Gancho Tensor:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="gancho_tensor" name="gancho_tensor" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cinta_de_aislar">Cinta de Aislar:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="cinta_de_aislar" name="cinta_de_aislar" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="tubo_ranurado">Tubo Ranurado:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="tubo_ranurado" name="tubo_ranurado" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="lubricante">Lubricante:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="lubricante" name="lubricante" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cord_marfil_metros">Cord Marfil (metros):</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="cord_marfil_metros" name="cord_marfil_metros" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div> 
+
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="longitud_acometida_metros">Longitud Acometida (mertos):</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="number" id="longitud_acometida_metros" name="longitud_acometida_metros" class="w-20 mr-6 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="0">
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     
@@ -295,7 +381,7 @@
                                     <label for="tipo_negocio">Negocio:</label>
                                 </div>
                                 <div class="pt-10">
-                                    <input class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" type="checkbox" id="tipo_negocio" name="tipo_negocio"  {{ (isset($fibraOrder->tipo_negocio) &&  $fibraOrder->tipo_negocio == 1)? 'checked' : ''}}>
+                                    <input class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" type="checkbox" id="tipo_negocio" name="tipo_negocio">
                                 </div>
                             </div>
 
@@ -304,7 +390,7 @@
                                     <label for="tipo_casa">Casa:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="tipo_casa" name="tipo_casa" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->tipo_casa) &&  $fibraOrder->tipo_casa == 1)? 'checked' : ''}} > 
+                                    <input type="checkbox" id="tipo_casa" name="tipo_casa" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]"> 
                                 </div>
                             </div>
                             
@@ -313,7 +399,7 @@
                                     <label for="tipo_edificios">Edificios:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="tipo_edificios" name="tipo_edificios" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->tipo_edificios) &&  $fibraOrder->tipo_edificios == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="tipo_edificios" name="tipo_edificios" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -322,7 +408,7 @@
                                     <label for="tipo_plaza">Plaza:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="tipo_plaza" name="tipo_plaza" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->tipo_plaza) &&  $fibraOrder->tipo_plaza == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="tipo_plaza" name="tipo_plaza" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 
@@ -331,7 +417,7 @@
                                     <label for="tipo_residencial">Residencial:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="tipo_residencial" name="tipo_residencial" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->tipo_residencial) &&  $fibraOrder->tipo_residencial == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="tipo_residencial" name="tipo_residencial" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                            
@@ -340,7 +426,7 @@
                                     <label for="tipo_aerea">Aerea:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="tipo_aerea" name="tipo_aerea" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->tipo_aerea) &&  $fibraOrder->tipo_aerea == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="tipo_aerea" name="tipo_aerea" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -349,7 +435,7 @@
                                     <label for="tipo_subterraneo">Subterraneo:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="tipo_subterraneo" name="tipo_subterraneo" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->tipo_subterraneo) &&  $fibraOrder->tipo_subterraneo == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="tipo_subterraneo" name="tipo_subterraneo" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                            
@@ -363,7 +449,7 @@
                                     <label for="longitud_acum_tel">Longitud Acum:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input class="w-20" type="text" id="longitud_acum_tel" name="longitud_acum_tel" class="border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->longitud_acum_tel)? $fibraOrder->longitud_acum_tel : ''}}">
+                                    <input class="w-20" type="text" id="longitud_acum_tel" name="longitud_acum_tel" class="border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 
@@ -372,7 +458,7 @@
                                     <label for="fibra_25m_tel">Fibra de 25m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_25m_tel" name="fibra_25m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->fibra_25m_tel) &&  $fibraOrder->fibra_25m_tel == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="fibra_25m_tel" name="fibra_25m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -381,7 +467,7 @@
                                     <label for="fibra_50m_tel">Fibra de 50m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_50m_tel" name="fibra_50m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->fibra_50m_tel) && $fibraOrder->fibra_50m_tel == 1) ? 'checked' : '' }}>
+                                    <input type="checkbox" id="fibra_50m_tel" name="fibra_50m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -390,7 +476,7 @@
                                     <label for="fibra_75m_tel">Fibra de 75m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_75m_tel" name="fibra_75m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->fibra_75m_tel) &&  $fibraOrder->fibra_75m_tel == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="fibra_75m_tel" name="fibra_75m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -399,7 +485,7 @@
                                     <label for="fibra_100m_tel">Fibra de 100m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_100m_tel" name="fibra_100m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->fibra_100m_tel) &&  $fibraOrder->fibra_100m_tel == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="fibra_100m_tel" name="fibra_100m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -408,7 +494,7 @@
                                     <label for="fibra_125m_tel">Fibra de 125m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_125m_tel" name="fibra_125m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->fibra_125m_tel) &&  $fibraOrder->fibra_125m_tel == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="fibra_125m_tel" name="fibra_125m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 
@@ -417,7 +503,7 @@
                                     <label for="metral_bobina_tel">Metral E/bobina:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="metral_bobina_tel" name="metral_bobina_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->metral_bobina_tel) &&  $fibraOrder->metral_bobina_tel == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="metral_bobina_tel" name="metral_bobina_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                            
@@ -432,7 +518,7 @@
                                     <label for="longitud_acum_huawei">Longitud Acum:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="text" id="longitud_acum_huawei" name="longitud_acum_huawei" class="w-20 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->longitud_acum_huawei)? $fibraOrder->longitud_acum_huawei : ''}}">
+                                    <input type="text" id="longitud_acum_huawei" name="longitud_acum_huawei" class="w-20 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 
@@ -441,7 +527,7 @@
                                     <label for="cord_prec_25m_huawei">Cord Prec 25m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_25m_huawei" name="cord_prec_25m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_25m_huawei) &&  $fibraOrder->cord_prec_25m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_25m_huawei" name="cord_prec_25m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -450,7 +536,7 @@
                                     <label for="cord_prec_50m_huawei">Cord Prec 50m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_50m_huawei" name="cord_prec_50m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_50m_huawei) &&  $fibraOrder->cord_prec_50m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_50m_huawei" name="cord_prec_50m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -459,7 +545,7 @@
                                     <label for="cord_prec_80m_huawei">Cord Prec 80m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_80m_huawei" name="cord_prec_80m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_80m_huawei) &&  $fibraOrder->cord_prec_80m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_80m_huawei" name="cord_prec_80m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 
@@ -468,7 +554,7 @@
                                     <label for="cord_prec_100m_huawei">Cord Prec 100m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_100m_huawei" name="cord_prec_100m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_100m_huawei) &&  $fibraOrder->cord_prec_100m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_100m_huawei" name="cord_prec_100m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -477,7 +563,7 @@
                                     <label for="cord_prec_120m_huawei">Cord Prec 120m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_120m_huawei" name="cord_prec_120m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_120m_huawei) &&  $fibraOrder->cord_prec_120m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_120m_huawei" name="cord_prec_120m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 
@@ -486,7 +572,7 @@
                                     <label for="cord_prec_150m_huawei">Cord Prec 150m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_150m_huawei" name="cord_prec_150m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_150m_huawei) &&  $fibraOrder->cord_prec_150m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_150m_huawei" name="cord_prec_150m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
@@ -495,7 +581,7 @@
                                     <label for="cord_prec_200m_huawei">Cord Prec 200m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="cord_prec_200m_huawei" name="cord_prec_200m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->cord_prec_200m_huawei) &&  $fibraOrder->cord_prec_200m_huawei == 1)? 'checked' : ''}}>
+                                    <input type="checkbox" id="cord_prec_200m_huawei" name="cord_prec_200m_huawei" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                         </div>
@@ -513,7 +599,7 @@
                                 <label for="numero_serie">Número de Serie:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="text" id="numero_serie" name="numero_serie" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->numero_serie)? $fibraOrder->numero_serie : ''}}">
+                                <input type="text" id="numero_serie" name="numero_serie" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
 
@@ -522,7 +608,7 @@
                                 <label for="alfanumerico">Alfanumérico:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                            <input type="text" id="alfanumerico" name="alfanumerico" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->alfanumerico)? $fibraOrder->alfanumerico : ''}}">
+                            <input type="text" id="alfanumerico" name="alfanumerico" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
                        
@@ -531,7 +617,7 @@
                                 <label for="key">Key:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="text" id="key" name="key" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->key)? $fibraOrder->key : ''}}">
+                                <input type="text" id="key" name="key" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
 
@@ -540,7 +626,7 @@
                                 <label for="ont_cobre">N ONT de Cobre:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="text" id="ont_cobre" name="ont_cobre" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->ont_cobre)? $fibraOrder->ont_cobre : ''}}">
+                                <input type="text" id="ont_cobre" name="ont_cobre" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
 
@@ -549,7 +635,7 @@
                                 <label for="observaciones">Observaciones:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="text" id="observaciones" name="observaciones" rows="2" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->observaciones)? $fibraOrder->observaciones : ''}}">
+                                <input type="text" id="observaciones" name="observaciones" rows="2" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
 
@@ -558,7 +644,7 @@
                                 <label for="correo_electronico">Correo Electrónico:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="text" id="correo_electronico" name="correo_electronico" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->correo_electronico)? $fibraOrder->correo_electronico : ''}}">
+                                <input type="text" id="correo_electronico" name="correo_electronico" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
 
@@ -567,7 +653,7 @@
                                 <label for="clarovideo">Clarovideo:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="text" id="clarovideo" name="clarovideo" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->clarovideo)? $fibraOrder->clarovideo : ''}}">
+                                <input type="text" id="clarovideo" name="clarovideo" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
                         
@@ -576,9 +662,9 @@
                                 <label for="si_no">Activado:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="radio" id="si" name="activado" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($fibraOrder->activado) && $fibraOrder->activado == 1) ? 'checked' : '' }}>
+                                <input type="radio" id="si" name="activado" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 <label for="si" class="mr-4">Si</label>
-                                <input type="radio" id="no" name="activado" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ $fibraOrder->activado == 0 ? 'checked' : '' }}>
+                                <input type="radio" id="no" name="activado" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 <label for="no">No</label>
                             </div>
                         </div>
@@ -592,7 +678,7 @@
                                 <label for="hora_generacion_portal">Hora de Generación Portal:</label>
                             </div>
                             <div class="p-4 mr-2">
-                                <input type="time" id="hora_generacion_portal" name="hora_generacion_portal" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->hora_generacion_portal)? $fibraOrder->hora_generacion_portal : ''}}">
+                                <input type="time" id="hora_generacion_portal" name="hora_generacion_portal" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
 
@@ -601,7 +687,7 @@
                                 <label for="hora_liquidacion">Hora de Liquidación:</label>
                             </div>
                             <div class="p-4 mr-2">
-                                <input type="time" id="hora_liquidacion" name="hora_liquidacion" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" value="{{ isset($fibraOrder->hora_liquidacion)? $fibraOrder->hora_liquidacion : ''}}">
+                                <input type="time" id="hora_liquidacion" name="hora_liquidacion" class="w-96 border rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                             </div>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ class CobreOrder extends Model
         'cincho_negro',
         'clip_adherible',
         'cadena_distribucion',
-        'argolla_fleje', // Mantenemos la columna antigua
+        'argolla_fleje', 
         'taquete',
         'modem',
         'sujetador_p_cor_int_ext',
