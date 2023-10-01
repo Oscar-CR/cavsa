@@ -68,11 +68,11 @@ return new class extends Migration
             $table->boolean('tipo_aerea')->default(false);
             $table->boolean('tipo_subterraneo')->default(false);
             $table->string('longitud_acum_tel')->nullable();
-            $table->boolean('fibra_25m_tel')->default(0);
-            $table->integer('fibra_50m_tel')->default(0);
-            $table->integer('fibra_75m_tel')->default(0);
-            $table->integer('fibra_100m_tel')->default(0);
-            $table->integer('fibra_125m_tel')->default(0);
+            $table->boolean('cobre_25m_tel')->default(0);
+            $table->integer('cobre_50m_tel')->default(0);
+            $table->integer('cobre_75m_tel')->default(0);
+            $table->integer('cobre_100m_tel')->default(0);
+            $table->integer('cobre_125m_tel')->default(0);
             $table->integer('metral_bobina_tel')->default(0);
             $table->string('longitud_acum_huawei')->nullable();
             $table->boolean('cord_prec_25m_huawei')->default(false);

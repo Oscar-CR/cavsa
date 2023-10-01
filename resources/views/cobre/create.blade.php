@@ -455,46 +455,46 @@
 
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="fibra_25m_tel">Fibra de 25m:</label>
+                                    <label for="cobre_25m_tel">cobre de 25m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_25m_tel" name="fibra_25m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                                </div>
-                            </div>
-                            
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="fibra_50m_tel">Fibra de 50m:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="checkbox" id="fibra_50m_tel" name="fibra_50m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                    <input type="checkbox" id="cobre_25m_tel" name="cobre_25m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="fibra_75m_tel">Fibra de 75m:</label>
+                                    <label for="cobre_50m_tel">cobre de 50m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_75m_tel" name="fibra_75m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                                </div>
-                            </div>
-                            
-                            <div class="flex justify-between">
-                                <div class="pt-4">
-                                    <label for="fibra_100m_tel">Fibra de 100m:</label>
-                                </div>
-                                <div class="pt-4">
-                                    <input type="checkbox" id="fibra_100m_tel" name="fibra_100m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                    <input type="checkbox" id="cobre_50m_tel" name="cobre_50m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
                             
                             <div class="flex justify-between">
                                 <div class="pt-4">
-                                    <label for="fibra_125m_tel">Fibra de 125m:</label>
+                                    <label for="cobre_75m_tel">cobre de 75m:</label>
                                 </div>
                                 <div class="pt-4">
-                                    <input type="checkbox" id="fibra_125m_tel" name="fibra_125m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                    <input type="checkbox" id="cobre_75m_tel" name="cobre_75m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cobre_100m_tel">cobre de 100m:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="checkbox" id="cobre_100m_tel" name="cobre_100m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-between">
+                                <div class="pt-4">
+                                    <label for="cobre_125m_tel">cobre de 125m:</label>
+                                </div>
+                                <div class="pt-4">
+                                    <input type="checkbox" id="cobre_125m_tel" name="cobre_125m_tel" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
                                 </div>
                             </div>
 

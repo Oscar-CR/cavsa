@@ -25,94 +25,96 @@ class CobreController extends Controller
     }
 
     public function cobreStore(Request $request){
-        $createFibraOrder = new CobreOrder();
-        $createFibraOrder->telefono = $request->telefono;
-        $createFibraOrder->tipo_os = $request->tipo_os;
-        $createFibraOrder->numero_os = $request->numero_os;
-        $createFibraOrder->status = $request->status;
-        $createFibraOrder->pysa = $request->pysa;
-        $createFibraOrder->hora_llegada = $request->hora_llegada;
-        $createFibraOrder->fecha = $request->fecha;
-        $createFibraOrder->folio_tec = $request->folio_tec;
-        $createFibraOrder->nombre_cliente = $request->nombre_cliente;
-        $createFibraOrder->direccion = $request->direccion;
-        $createFibraOrder->entre_calles = $request->entre_calles;
-        $createFibraOrder->colonia = $request->colonia;
-        $createFibraOrder->edificio = $request->edificio;
-        $createFibraOrder->depto = $request->depto;
-        $createFibraOrder->portalera = $request->portalera;
-        $createFibraOrder->distrito = $request->distrito;
-        $createFibraOrder->terminal = $request->terminal;
-        $createFibraOrder->puerto = $request->puerto;
-        $createFibraOrder->potencia = $request->potencia;
-        $createFibraOrder->navegacion = $request->navegacion;
+        $createCobreOrder = new CobreOrder();
+        $createCobreOrder->telefono = $request->telefono;
+        $createCobreOrder->tipo_os = $request->tipo_os;
+        $createCobreOrder->numero_os = $request->numero_os;
+        $createCobreOrder->status = $request->status;
+        $createCobreOrder->pysa = $request->pysa;
+        $createCobreOrder->hora_llegada = $request->hora_llegada;
+        $createCobreOrder->fecha = $request->fecha;
+        $createCobreOrder->folio_tec = $request->folio_tec;
+        $createCobreOrder->nombre_cliente = $request->nombre_cliente;
+        $createCobreOrder->direccion = $request->direccion;
+        $createCobreOrder->entre_calles = $request->entre_calles;
+        $createCobreOrder->colonia = $request->colonia;
+        $createCobreOrder->edificio = $request->edificio;
+        $createCobreOrder->depto = $request->depto;
+        $createCobreOrder->portalera = $request->portalera;
+        $createCobreOrder->distrito = $request->distrito;
+        $createCobreOrder->terminal = $request->terminal;
+        $createCobreOrder->puerto = $request->puerto;
+        $createCobreOrder->potencia = $request->potencia;
+        $createCobreOrder->navegacion = $request->navegacion;
 
 
-        $createFibraOrder->argolla = $request->argolla;
-        $createFibraOrder->dit_spliter_con_proteccion = $request->dit_spliter_con_proteccion;
-        $createFibraOrder->muela = $request->muela;
-        $createFibraOrder->cincho_negro = $request->cincho_negro;
-        $createFibraOrder->clip_adherible = $request->clip_adherible;
-        $createFibraOrder->cadena_distribucion = $request->cadena_distribucion;
-        $createFibraOrder->argolla_fleje = $request->argolla_fleje;
-        $createFibraOrder->taquete = $request->taquete;
-        $createFibraOrder->modem = $request->modem;
-        $createFibraOrder->sujetador_p_cor_int_ext = $request->sujetador_p_cor_int_ext;
-        $createFibraOrder->sujetador_p_cor_acom_de_2_pares = $request->sujetador_p_cor_acom_de_2_pares;
-        $createFibraOrder->roseta = $request->roseta;
-        $createFibraOrder->sello_pasamuro = $request->sello_pasamuro;
-        $createFibraOrder->cable_rj11 = $request->cable_rj11;
-        $createFibraOrder->cord_cafe_naranja = $request->cord_cafe_naranja;
-        $createFibraOrder->cord_naranja_blanco = $request->cord_naranja_blanco;
-        $createFibraOrder->cord_rojo_blanco = $request->cord_rojo_blanco;
-        $createFibraOrder->gancho_tensor = $request->gancho_tensor;
-        $createFibraOrder->cinta_de_aislar = $request->cinta_de_aislar;
-        $createFibraOrder->tubo_ranurado = $request->tubo_ranurado;
-        $createFibraOrder->lubricante = $request->lubricante;
-        $createFibraOrder->cord_marfil_metros = $request->cord_marfil_metros;
-        $createFibraOrder->longitud_acometida_metros = $request->longitud_acometida_metros;
+        $createCobreOrder->argolla = $request->argolla;
+        $createCobreOrder->dit_spliter_con_proteccion = $request->dit_spliter_con_proteccion;
+        $createCobreOrder->muela = $request->muela;
+        $createCobreOrder->cincho_negro = $request->cincho_negro;
+        $createCobreOrder->clip_adherible = $request->clip_adherible;
+        $createCobreOrder->cadena_distribucion = $request->cadena_distribucion;
+        $createCobreOrder->argolla_fleje = $request->argolla_fleje;
+        $createCobreOrder->taquete = $request->taquete;
+        $createCobreOrder->modem = $request->modem;
+        $createCobreOrder->sujetador_p_cor_int_ext = $request->sujetador_p_cor_int_ext;
+        $createCobreOrder->sujetador_p_cor_acom_de_2_pares = $request->sujetador_p_cor_acom_de_2_pares;
+        $createCobreOrder->roseta = $request->roseta;
+        $createCobreOrder->sello_pasamuro = $request->sello_pasamuro;
+        $createCobreOrder->cable_rj11 = $request->cable_rj11;
+        $createCobreOrder->cord_cafe_naranja = $request->cord_cafe_naranja;
+        $createCobreOrder->cord_naranja_blanco = $request->cord_naranja_blanco;
+        $createCobreOrder->cord_rojo_blanco = $request->cord_rojo_blanco;
+        $createCobreOrder->gancho_tensor = $request->gancho_tensor;
+        $createCobreOrder->cinta_de_aislar = $request->cinta_de_aislar;
+        $createCobreOrder->tubo_ranurado = $request->tubo_ranurado;
+        $createCobreOrder->lubricante = $request->lubricante;
+        $createCobreOrder->cord_marfil_metros = $request->cord_marfil_metros;
+        $createCobreOrder->longitud_acometida_metros = $request->longitud_acometida_metros;
 
 
-        $createFibraOrder->tipo_negocio = isset($request->tipo_negocio)? true: false;
-        $createFibraOrder->tipo_casa = isset($request->tipo_casa)? true: false;
-        $createFibraOrder->tipo_edificios = isset($request->tipo_edificios)? true: false;
-        $createFibraOrder->tipo_plaza = isset($request->tipo_plaza)? true: false;
-        $createFibraOrder->tipo_residencial = isset($request->tipo_residencial)? true: false;
-        $createFibraOrder->tipo_aerea = isset($request->tipo_aerea)? true: false;
-        $createFibraOrder->tipo_subterraneo = isset($request->tipo_subterraneo)? true: false;
-        $createFibraOrder->longitud_acum_tel = $request->longitud_acum_tel;
-        $createFibraOrder->fibra_25m_tel = isset($request->fibra_25m_tel)? true: false;
-        $createFibraOrder->fibra_50m_tel = isset($request->fibra_50m_tel)? true: false;
-        $createFibraOrder->fibra_75m_tel = isset($request->fibra_75m_tel)? true: false;
-        $createFibraOrder->fibra_100m_tel = isset($request->fibra_100m_tel)? true: false;
-        $createFibraOrder->fibra_125m_tel = isset($request->fibra_125m_tel)? true: false;
-        $createFibraOrder->metral_bobina_tel = $request->metral_bobina_tel? true: false;
-        $createFibraOrder->longitud_acum_huawei = $request->longitud_acum_huawei;
-        $createFibraOrder->cord_prec_25m_huawei = isset($request->cord_prec_25m_huawei)? true: false;
-        $createFibraOrder->cord_prec_50m_huawei = isset($request->cord_prec_50m_huawei)? true: false;
-        $createFibraOrder->cord_prec_80m_huawei = isset($request->cord_prec_80m_huawei)? true: false;
-        $createFibraOrder->cord_prec_100m_huawei = isset($request->cord_prec_100m_huawei)? true: false;
-        $createFibraOrder->cord_prec_120m_huawei = isset($request->cord_prec_120m_huawei)? true: false;
-        $createFibraOrder->cord_prec_150m_huawei = isset($request->cord_prec_150m_huawei)? true: false;
-        $createFibraOrder->cord_prec_200m_huawei = isset($request->cord_prec_200m_huawei)? true: false;
-        $createFibraOrder->numero_serie = $request->numero_serie;
-        $createFibraOrder->alfanumerico = $request->alfanumerico;
-        $createFibraOrder->key = $request->key;
-        $createFibraOrder->ont_cobre = $request->ont_cobre;
-        $createFibraOrder->observaciones = $request->observaciones;
-        $createFibraOrder->correo_electronico = $request->correo_electronico;
-        $createFibraOrder->clarovideo = $request->clarovideo;
-        $createFibraOrder->activado = (isset($request->activado) && $request->activado == 'Si')? true: false;
-        $createFibraOrder->hora_generacion_portal = $request->hora_generacion_portal;
-        $createFibraOrder->hora_liquidacion = $request->hora_liquidacion;
-        $createFibraOrder->user_id = Auth::user()->id; 
-        $createFibraOrder->save();
+        $createCobreOrder->tipo_negocio = isset($request->tipo_negocio)? true: false;
+        $createCobreOrder->tipo_casa = isset($request->tipo_casa)? true: false;
+        $createCobreOrder->tipo_edificios = isset($request->tipo_edificios)? true: false;
+        $createCobreOrder->tipo_plaza = isset($request->tipo_plaza)? true: false;
+        $createCobreOrder->tipo_residencial = isset($request->tipo_residencial)? true: false;
+        $createCobreOrder->tipo_aerea = isset($request->tipo_aerea)? true: false;
+        $createCobreOrder->tipo_subterraneo = isset($request->tipo_subterraneo)? true: false;
+        $createCobreOrder->longitud_acum_tel = $request->longitud_acum_tel;
+        $createCobreOrder->cobre_25m_tel = isset($request->cobre_25m_tel)? true: false;
+        $createCobreOrder->cobre_50m_tel = isset($request->cobre_50m_tel)? true: false;
+        $createCobreOrder->cobre_75m_tel = isset($request->cobre_75m_tel)? true: false;
+        $createCobreOrder->cobre_100m_tel = isset($request->cobre_100m_tel)? true: false;
+        $createCobreOrder->cobre_125m_tel = isset($request->cobre_125m_tel)? true: false;
+        $createCobreOrder->metral_bobina_tel = $request->metral_bobina_tel? true: false;
+        $createCobreOrder->longitud_acum_huawei = $request->longitud_acum_huawei;
+        $createCobreOrder->cord_prec_25m_huawei = isset($request->cord_prec_25m_huawei)? true: false;
+        $createCobreOrder->cord_prec_50m_huawei = isset($request->cord_prec_50m_huawei)? true: false;
+        $createCobreOrder->cord_prec_80m_huawei = isset($request->cord_prec_80m_huawei)? true: false;
+        $createCobreOrder->cord_prec_100m_huawei = isset($request->cord_prec_100m_huawei)? true: false;
+        $createCobreOrder->cord_prec_120m_huawei = isset($request->cord_prec_120m_huawei)? true: false;
+        $createCobreOrder->cord_prec_150m_huawei = isset($request->cord_prec_150m_huawei)? true: false;
+        $createCobreOrder->cord_prec_200m_huawei = isset($request->cord_prec_200m_huawei)? true: false;
+        $createCobreOrder->numero_serie = $request->numero_serie;
+        $createCobreOrder->alfanumerico = $request->alfanumerico;
+        $createCobreOrder->key = $request->key;
+        $createCobreOrder->ont_cobre = $request->ont_cobre;
+        $createCobreOrder->observaciones = $request->observaciones;
+        $createCobreOrder->correo_electronico = $request->correo_electronico;
+        $createCobreOrder->clarovideo = $request->clarovideo;
+        $createCobreOrder->activado = (isset($request->activado) && $request->activado == 'Si')? true: false;
+        $createCobreOrder->hora_generacion_portal = $request->hora_generacion_portal;
+        $createCobreOrder->hora_liquidacion = $request->hora_liquidacion;
+        $createCobreOrder->user_id = Auth::user()->id; 
+        $createCobreOrder->save();
 
-        return redirect()->action([FibraController::class, 'fibra'])->with('msg', 'Solicitud agregada con exito');
+        return redirect()->action([CobreController::class, 'cobre'])->with('msg', 'Solicitud agregada con exito');
     }
 
-    public function cobreEdit(){
-        return view('fibra.create');
+    public function cobreEdit($id){
+
+        $cobreOrder = CobreOrder::where('id',$id)->get()->last();
+        return view('cobre.edit', compact('cobreOrder'));
     }
 
     public function cobreUpdate(Request $request){
@@ -171,11 +173,11 @@ class CobreController extends Controller
             'tipo_subterraneo' => isset($request->tipo_subterraneo)? true: false,
             'longitud_acum_tel' => $request->longitud_acum_tel,
 
-            'fibra_25m_tel' => isset($request->fibra_25m_tel)? true: false,
-            'fibra_50m_tel' => isset($request->fibra_50m_tel)? true: false,
-            'fibra_75m_tel' => isset($request->fibra_75m_tel)? true: false,
-            'fibra_100m_tel' => isset($request->fibra_100m_tel)? true: false,
-            'fibra_125m_tel' => isset($request->fibra_125m_tel)? true: false,
+            'cobre_25m_tel' => isset($request->cobre_25m_tel)? true: false,
+            'cobre_50m_tel' => isset($request->cobre_50m_tel)? true: false,
+            'cobre_75m_tel' => isset($request->cobre_75m_tel)? true: false,
+            'cobre_100m_tel' => isset($request->cobre_100m_tel)? true: false,
+            'cobre_125m_tel' => isset($request->cobre_125m_tel)? true: false,
             'metral_bobina_tel' => $request->metral_bobina_tel? true: false,
             'longitud_acum_huawei' => $request->longitud_acum_huawei,
 
@@ -202,7 +204,7 @@ class CobreController extends Controller
     }
 
     public function cobreDelete(){
-        return view('fibra.create');
+        return view('cobre.create');
     }
 
 }
