@@ -15,7 +15,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="lastname" class="block text-gray-600">Apellido:</label>
-                        <input type="text" name="lastname" id="lastname" class="form-input w-full rounded" required>
+                        <input type="text" name="lastname" id="lastname" class="form-input w-full rounded" >
                     </div>
                     <div class="mb-4">
                         <label for="cope_labor" class="block text-gray-600">Cope Labor:</label>

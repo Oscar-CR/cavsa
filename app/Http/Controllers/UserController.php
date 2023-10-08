@@ -57,8 +57,10 @@ class UserController extends Controller
 
     function userEdit($id){
         $user = User::where('id', $id)->get()->first();
+        $user_roles = RoleUser::where('user_id', $id);
+      
 
-        return view('admin.user.edit', compact('user'));
+        return view('admin.user.edit', compact('user','user_roles'));
     }
 
     function userUpdate(Request $request){
@@ -76,6 +78,20 @@ class UserController extends Controller
         DB::table('users')->where('id', $request->id)->update([
             'status' => 0, 
         ]);
+
+        return redirect()->action([UserController::class, 'user'])->with('msg', 'Usuario eliminado satisfactoriamente');
+
+    }
+
+    function userChangePassword(Request $request) {
+        if($request->passwor != ''){
+            DB::table('users')->where('id', $request->id)->update([
+                'password' =>  Hash::make($request->password), 
+            ]);
+        }
+        
+        return redirect()->action([UserController::class, 'user'])->with('msg', 'Contraseña actualizada satisfactoriamente');
+
     }
 
 }

@@ -47,7 +47,9 @@
                         <td>
                             <div class="flex">
                                 
-                            
+                                <a href="{{ route('admin.user.edit', ['id' => $user->id ])}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                    Editar
+                                </a>    
                                 
                             </div>
 
