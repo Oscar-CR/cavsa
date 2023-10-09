@@ -15,7 +15,7 @@
                 </a>
                 
             @endif
-            <span class="text-gray-700">Mi Cuenta</span>
+            <!--     <span class="text-gray-700">Mi Cuenta</span> -->
             <a href="{{ route('logout') }}" class="text-red-500 hover:text-red-600" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Cerrar Sesión
             </a>

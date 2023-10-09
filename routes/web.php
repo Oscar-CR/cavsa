@@ -56,7 +56,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/user-update', [UserController::class, 'userUpdate'])->name('admin.user.update');
     Route::delete('/user-delete', [UserController::class, 'userDelete'])->name('admin.user.delete');
     Route::post('/user-change-password', [UserController::class, 'userChangePassword'])->name('admin.user.change.password');
+    
 
 });
 
+require __DIR__.'/auth.php';
 

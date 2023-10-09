@@ -6,7 +6,7 @@
     <div class="flex justify-center items-center w-full">
         <div class="bg-white p-4 rounded-lg shadow-md w-full ">
             <h1 class="text-2xl font-semibold mb-4">Editar Usuario</h1>
-            <form action="{{ route('admin.user.update') }}" method="POST">
+            <form action="{{ route('admin.user.update', ['id'=> $user->id] ) }}" method="POST">
                 @csrf
                 <div class="grid grid-cols-2 gap-4">
                     <div class="mb-4">
@@ -51,18 +51,21 @@
     </div>
 
 
-    <div class="bg-white p-4 rounded-lg shadow-md w-full ">
-        <form method="POST" action="{{ route('admin.user.change.password') }}">
+    <div class="bg-white p-4 rounded-lg shadow-md w-full mt-4">
+        <form method="POST" action="{{ route('admin.user.change.password', ['id'=> $user->id] ) }}">
         @csrf
             <h1 class="text-2xl font-semibold mb-4">¿Cambiar contraseña?</h1>
 
-            <div class="mb-4">
-                <label for="password" class="block text-gray-600 font-semibold mb-2">Nueva contraseña:</label>
-                <input type="password" name="password" id="password" class="w-full px-4 py-2 border rounded-md">
-            </div>
+            <div class="flex mb-4">
+                <div class="w-3/4 pr-4">
+                    <label for="text" class="block text-gray-600 font-semibold mb-2">Nueva contraseña:</label>
+                    <input type="text" name="password" id="password" class="w-full px-4 py-2 border rounded-md">
+                </div>
+                <div class="w-1/4">                    
+                    <label for="password" class="block text-gray-600 font-semibold mb-2"></label>
 
-            <div>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">Cambiar Contraseña</button>
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded mt-6 w-full">Cambiar Contraseña</button>
+                </div>
             </div>
         </form>
     </div>

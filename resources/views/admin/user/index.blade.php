@@ -42,14 +42,29 @@
                         <td>{{ $user->name . ' ' . $user->lastname }}</td>
                         <td>{{ $user->technical_number }}</td>
                         <td>
-                        
-                        </td>                    
+                            @if ($user->roles->count() > 0)
+                                @foreach ($user->roles as $role)
+                                    {{ $role->display_name }}
+                                @endforeach
+                            @else
+                                Sin roles asignados
+                            @endif
+                        </td>                   
                         <td>
                             <div class="flex">
                                 
                                 <a href="{{ route('admin.user.edit', ['id' => $user->id ])}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                                     Editar
-                                </a>    
+                                </a> 
+                                
+                                <form method="POST" action="{{ route('admin.user.delete', ['id' => $user->id ])}}" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este usuario?');">
+                                    @csrf
+                                    @method('DELETE')
+                                        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">
+                                            Eliminar
+                                        </button>
+        
+                                </form>
                                 
                             </div>
 

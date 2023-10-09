@@ -6,13 +6,14 @@ use App\Models\Role;
 use App\Models\RoleUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     function user(){
-        $users  = User::all();
+        $users  = User::all()->where('status',1);
         return view('admin.user.index', compact('users'));
     }
 
@@ -64,6 +65,7 @@ class UserController extends Controller
     }
 
     function userUpdate(Request $request){
+
         DB::table('users')->where('id', $request->id)->update([
             'name' => $request->name, 
             'lastname' => $request->lastname,
@@ -84,6 +86,7 @@ class UserController extends Controller
     }
 
     function userChangePassword(Request $request) {
+
         if($request->passwor != ''){
             DB::table('users')->where('id', $request->id)->update([
                 'password' =>  Hash::make($request->password), 
