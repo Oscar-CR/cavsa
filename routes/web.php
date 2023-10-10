@@ -39,6 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/fibra-edit/{id}', [FibraController::class, 'fibraEdit'])->name('home.fibra.edit');
     Route::post('/fibra-update', [FibraController::class, 'fibraUpdate'])->name('home.fibra.update');
     Route::delete('/fibra-delete', [FibraController::class, 'fibraDelete'])->name('home.fibra.delete');
+    
+    Route::post('/fibra-xlsx', [FibraController::class, 'fibraXLSX'])->name('home.fibra.xlsx');
 
 
     Route::get('/cobre', [CobreController::class, 'cobre'])->name('home.cobre');

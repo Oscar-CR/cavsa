@@ -6,6 +6,8 @@ use App\Models\FibraOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class FibraController extends Controller
 {
@@ -190,9 +192,80 @@ class FibraController extends Controller
     }
 
 
-    
-
     public function fibraDelete(){
         return view('fibra.create');
+    }
+
+
+    function fibraXLSX(Request $request){
+
+    
+        $fibraOrder = FibraOrder::where('id',$request->id)->get()->first();
+       
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $styleRows = [
+            'borders' => [
+                'outline' => [
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'color' => ['argb' => 'FF000000'],
+                ],
+            ],
+        ];
+        $sheet->getStyle('B3:B6')->applyFromArray($styleRows);
+        $sheet->getStyle('C3:C6')->applyFromArray($styleRows);
+        $sheet->getStyle('D3:D6')->applyFromArray($styleRows);
+
+        $sheet->getStyle('B7')->applyFromArray($styleRows);
+        $sheet->getStyle('B8')->applyFromArray($styleRows);
+        $sheet->getStyle('B9')->applyFromArray($styleRows);
+        $sheet->getStyle('B10')->applyFromArray($styleRows);
+
+        $spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(22);
+        $spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(28);
+        $spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(12);
+        
+        $sheet->setCellValue('B3', 'ORDEN DE SERVICIO:');
+        $sheet->setCellValue('C3', $fibraOrder->telefono);
+        $sheet->setCellValue('E3', 'ESTATUS:');
+        $sheet->setCellValue('F3', 'HORA DE LLEGADA:');
+
+        $sheet->setCellValue('B4', 'TELEFONO:');
+        $sheet->setCellValue('C4', $fibraOrder->tipo_os);
+        $sheet->setCellValue('E4', $fibraOrder->status);
+        $sheet->setCellValue('F4', 'FECHA:');
+
+        $sheet->setCellValue('B5', 'TIPO O.S.:');
+        $sheet->setCellValue('C5', $fibraOrder->tipo_os);
+        $sheet->setCellValue('E5', $fibraOrder->pysa);
+        $sheet->setCellValue('F5', 'FOLIO TEC:');
+
+        $sheet->setCellValue('B6', 'Nº DE O.S.:');
+        $sheet->setCellValue('C5', $fibraOrder->numero_os);
+        $sheet->setCellValue('D6', 'PISA:');
+
+
+        $sheet->setCellValue('B7', 'NOMBRE DEL CLIENTE:');
+        $sheet->setCellValue('B8', 'DIRECCION:');
+        $sheet->setCellValue('B9', 'ENTRE CALLES:');
+        $sheet->setCellValue('B10', 'COLONIA:');
+        $sheet->setCellValue('B11', 'EDIFICIO:');
+        $sheet->setCellValue('D11', 'DEPTO:');
+        $sheet->setCellValue('F11', 'PORTALERA:');
+
+
+
+       
+       
+       
+
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="' . 'ORDEN FIBRA ' . strtoupper($fibraOrder->id) . '.xls');
+        header('Cache-Control: max-age=0');
+          
+        $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xls');
+        $writer->save('php://output');
     }
 }
