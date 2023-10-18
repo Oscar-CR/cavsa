@@ -14,9 +14,12 @@ class FibraController extends Controller
     public function fibra() {
 
         if(auth()->user()->hasRole('admin')){
+
+         
             $fibraOrders = FibraOrder::all();
         }else{
-            $fibraOrders = FibraOrder::where('id', Auth()->user()->id)->get();
+            
+            $fibraOrders = FibraOrder::where('user_id', Auth()->user()->id)->get();
 
         }
         
@@ -205,6 +208,7 @@ class FibraController extends Controller
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
+        //Estilo
         $styleRows = [
             'borders' => [
                 'outline' => [
@@ -213,52 +217,263 @@ class FibraController extends Controller
                 ],
             ],
         ];
-        $sheet->getStyle('B3:B6')->applyFromArray($styleRows);
-        $sheet->getStyle('C3:C6')->applyFromArray($styleRows);
-        $sheet->getStyle('D3:D6')->applyFromArray($styleRows);
 
-        $sheet->getStyle('B7')->applyFromArray($styleRows);
-        $sheet->getStyle('B8')->applyFromArray($styleRows);
-        $sheet->getStyle('B9')->applyFromArray($styleRows);
-        $sheet->getStyle('B10')->applyFromArray($styleRows);
-
+        //Tamano
         $spreadsheet->getActiveSheet()->getColumnDimension('B')->setWidth(22);
-        $spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(28);
-        $spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(12);
+        $spreadsheet->getActiveSheet()->getColumnDimension('C')->setWidth(8);
+        $spreadsheet->getActiveSheet()->getColumnDimension('D')->setWidth(15);
+        $spreadsheet->getActiveSheet()->getColumnDimension('E')->setWidth(10);
+        $spreadsheet->getActiveSheet()->getColumnDimension('F')->setWidth(22);
+        $spreadsheet->getActiveSheet()->getColumnDimension('G')->setWidth(8);
+        $spreadsheet->getActiveSheet()->getColumnDimension('H')->setWidth(26);
+        $spreadsheet->getActiveSheet()->getColumnDimension('I')->setWidth(12);
+        $spreadsheet->getActiveSheet()->getColumnDimension('J')->setWidth(20);
+        $spreadsheet->getActiveSheet()->getColumnDimension('K')->setWidth(8);
+        $spreadsheet->getActiveSheet()->getColumnDimension('L')->setWidth(20);
+        $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(6);
+
+        //Estilo aplicado a celda
+        $sheet->getStyle('B4:B6')->applyFromArray($styleRows);
+
+        $sheet->getStyle('C4:D4')->applyFromArray($styleRows);
+        $sheet->getStyle('C5:D5')->applyFromArray($styleRows);
+        $sheet->getStyle('C6:D6')->applyFromArray($styleRows);
+
+        $sheet->getStyle('E4:E6')->applyFromArray($styleRows);
+
+        $sheet->getStyle('F4:G4')->applyFromArray($styleRows);
+        $sheet->getStyle('F5:G5')->applyFromArray($styleRows);
+        $sheet->getStyle('F6:G6')->applyFromArray($styleRows);
+
+        $sheet->getStyle('H4:I6')->applyFromArray($styleRows);
+
+        $sheet->getStyle('J4:M4')->applyFromArray($styleRows);
+        $sheet->getStyle('J5:M5')->applyFromArray($styleRows);
+        $sheet->getStyle('J6:M6')->applyFromArray($styleRows);
+
+
+        $sheet->getStyle('B7:C7')->applyFromArray($styleRows);
+        $sheet->getStyle('B8:C8')->applyFromArray($styleRows);
+        $sheet->getStyle('B9:C9')->applyFromArray($styleRows);
+        $sheet->getStyle('B10:C10')->applyFromArray($styleRows);
+        $sheet->getStyle('B11:C11')->applyFromArray($styleRows);
+
+
+        $sheet->getStyle('D7:M7')->applyFromArray($styleRows);
+        $sheet->getStyle('D8:M8')->applyFromArray($styleRows);
+        $sheet->getStyle('D9:M9')->applyFromArray($styleRows);  
+        $sheet->getStyle('D10:M10')->applyFromArray($styleRows);
         
+
+        $sheet->getStyle('D11')->applyFromArray($styleRows);
+        $sheet->getStyle('E11')->applyFromArray($styleRows);
+        $sheet->getStyle('F11')->applyFromArray($styleRows);
+        $sheet->getStyle('G11:H11')->applyFromArray($styleRows);
+        $sheet->getStyle('I11')->applyFromArray($styleRows);
+        $sheet->getStyle('I11:M11')->applyFromArray($styleRows);
+        
+        $sheet->getStyle('B12:M13')->applyFromArray($styleRows);
+
+        $sheet->getStyle('B13')->applyFromArray($styleRows);
+        $sheet->getStyle('D13')->applyFromArray($styleRows);
+        $sheet->getStyle('F13')->applyFromArray($styleRows);
+        $sheet->getStyle('H13')->applyFromArray($styleRows);
+        $sheet->getStyle('J13')->applyFromArray($styleRows);
+
+
+        $sheet->getStyle('B14:M14')->applyFromArray($styleRows);
+
+        $sheet->getStyle('B15')->applyFromArray($styleRows);
+        $sheet->getStyle('B16')->applyFromArray($styleRows);
+        $sheet->getStyle('B17')->applyFromArray($styleRows);
+        $sheet->getStyle('B18')->applyFromArray($styleRows);
+        $sheet->getStyle('B19')->applyFromArray($styleRows);
+        $sheet->getStyle('B20')->applyFromArray($styleRows);
+        $sheet->getStyle('B21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('C15')->applyFromArray($styleRows);
+        $sheet->getStyle('C16')->applyFromArray($styleRows);
+        $sheet->getStyle('C17')->applyFromArray($styleRows);
+        $sheet->getStyle('C18')->applyFromArray($styleRows);
+        $sheet->getStyle('C19')->applyFromArray($styleRows);
+        $sheet->getStyle('C20')->applyFromArray($styleRows);
+        $sheet->getStyle('C21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('D15')->applyFromArray($styleRows);
+        $sheet->getStyle('D16')->applyFromArray($styleRows);
+        $sheet->getStyle('D17')->applyFromArray($styleRows);
+        $sheet->getStyle('D18')->applyFromArray($styleRows);
+        $sheet->getStyle('D19')->applyFromArray($styleRows);
+        $sheet->getStyle('D20')->applyFromArray($styleRows);
+        $sheet->getStyle('D21')->applyFromArray($styleRows);
+
+
+        $sheet->getStyle('E15')->applyFromArray($styleRows);
+        $sheet->getStyle('E16')->applyFromArray($styleRows);
+        $sheet->getStyle('E17')->applyFromArray($styleRows);
+        $sheet->getStyle('E18')->applyFromArray($styleRows);
+        $sheet->getStyle('E19')->applyFromArray($styleRows);
+        $sheet->getStyle('E20')->applyFromArray($styleRows);
+        $sheet->getStyle('E21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('F15')->applyFromArray($styleRows);
+        $sheet->getStyle('F16')->applyFromArray($styleRows);
+        $sheet->getStyle('F17')->applyFromArray($styleRows);
+        $sheet->getStyle('F18')->applyFromArray($styleRows);
+        $sheet->getStyle('F19')->applyFromArray($styleRows);
+        $sheet->getStyle('F20')->applyFromArray($styleRows);
+        $sheet->getStyle('F21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('G15')->applyFromArray($styleRows);
+        $sheet->getStyle('G16')->applyFromArray($styleRows);
+        $sheet->getStyle('G17')->applyFromArray($styleRows);
+        $sheet->getStyle('G18')->applyFromArray($styleRows);
+        $sheet->getStyle('G19')->applyFromArray($styleRows);
+        $sheet->getStyle('G20')->applyFromArray($styleRows);
+        $sheet->getStyle('G21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('H15')->applyFromArray($styleRows);
+        $sheet->getStyle('H16')->applyFromArray($styleRows);
+        $sheet->getStyle('H17')->applyFromArray($styleRows);
+        $sheet->getStyle('H18')->applyFromArray($styleRows);
+        $sheet->getStyle('H19')->applyFromArray($styleRows);
+        $sheet->getStyle('H20')->applyFromArray($styleRows);
+        $sheet->getStyle('H21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('I15')->applyFromArray($styleRows);
+        $sheet->getStyle('I16')->applyFromArray($styleRows);
+        $sheet->getStyle('I17')->applyFromArray($styleRows);
+        $sheet->getStyle('I18')->applyFromArray($styleRows);
+        $sheet->getStyle('I19')->applyFromArray($styleRows);
+        $sheet->getStyle('I20')->applyFromArray($styleRows);
+        $sheet->getStyle('I21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('J15:K15')->applyFromArray($styleRows);
+        $sheet->getStyle('J16')->applyFromArray($styleRows);
+        $sheet->getStyle('J17')->applyFromArray($styleRows);
+        $sheet->getStyle('J18')->applyFromArray($styleRows);
+        $sheet->getStyle('J19')->applyFromArray($styleRows);
+        $sheet->getStyle('J20')->applyFromArray($styleRows);
+        $sheet->getStyle('J21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('K16')->applyFromArray($styleRows);
+        $sheet->getStyle('K17')->applyFromArray($styleRows);
+        $sheet->getStyle('K18')->applyFromArray($styleRows);
+        $sheet->getStyle('K19')->applyFromArray($styleRows);
+        $sheet->getStyle('K20')->applyFromArray($styleRows);
+        $sheet->getStyle('K21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('L15:M15')->applyFromArray($styleRows);
+        $sheet->getStyle('L16')->applyFromArray($styleRows);
+        $sheet->getStyle('L17')->applyFromArray($styleRows);
+        $sheet->getStyle('L18')->applyFromArray($styleRows);
+        $sheet->getStyle('L19')->applyFromArray($styleRows);
+        $sheet->getStyle('L20')->applyFromArray($styleRows);
+        $sheet->getStyle('L21')->applyFromArray($styleRows);
+
+        $sheet->getStyle('M16')->applyFromArray($styleRows);
+        $sheet->getStyle('M17')->applyFromArray($styleRows);
+        $sheet->getStyle('M18')->applyFromArray($styleRows);
+        $sheet->getStyle('M19')->applyFromArray($styleRows);
+        $sheet->getStyle('M20')->applyFromArray($styleRows);
+        $sheet->getStyle('M21')->applyFromArray($styleRows);
+
+
+        //Datos en celdas
+
         $sheet->setCellValue('B3', 'ORDEN DE SERVICIO:');
-        $sheet->setCellValue('C3', $fibraOrder->telefono);
-        $sheet->setCellValue('E3', 'ESTATUS:');
-        $sheet->setCellValue('F3', 'HORA DE LLEGADA:');
-
         $sheet->setCellValue('B4', 'TELEFONO:');
-        $sheet->setCellValue('C4', $fibraOrder->tipo_os);
-        $sheet->setCellValue('E4', $fibraOrder->status);
-        $sheet->setCellValue('F4', 'FECHA:');
-
         $sheet->setCellValue('B5', 'TIPO O.S.:');
-        $sheet->setCellValue('C5', $fibraOrder->tipo_os);
-        $sheet->setCellValue('E5', $fibraOrder->pysa);
-        $sheet->setCellValue('F5', 'FOLIO TEC:');
-
         $sheet->setCellValue('B6', 'Nº DE O.S.:');
-        $sheet->setCellValue('C5', $fibraOrder->numero_os);
-        $sheet->setCellValue('D6', 'PISA:');
 
+        $sheet->setCellValue('D4', $fibraOrder->telefono);
+        $sheet->setCellValue('D5', $fibraOrder->tipo_os);
+        $sheet->setCellValue('D6', $fibraOrder->numero_os);
 
+        $sheet->setCellValue('E6', 'PISA:');
+
+        $sheet->setCellValue('F4', 'ESTATUS:');
+        $sheet->setCellValue('F5', $fibraOrder->status);
+        $sheet->setCellValue('F6', $fibraOrder->pysa);
+
+        $sheet->setCellValue('H4', 'HORA DE LLEGADA:');      
+        $sheet->setCellValue('H5', 'FECHA:');
+        $sheet->setCellValue('H6', 'FOLIO TEC:');
+
+        $sheet->setCellValue('J4', $fibraOrder->hora_llegada);      
+        $sheet->setCellValue('J5', $fibraOrder->fecha);
+        $sheet->setCellValue('J6', $fibraOrder->folio_tec);
+      
         $sheet->setCellValue('B7', 'NOMBRE DEL CLIENTE:');
         $sheet->setCellValue('B8', 'DIRECCION:');
         $sheet->setCellValue('B9', 'ENTRE CALLES:');
+
+
+
         $sheet->setCellValue('B10', 'COLONIA:');
+
+        $sheet->setCellValue('D7', $fibraOrder->nombre_cliente);
+        $sheet->setCellValue('D8', $fibraOrder->direccion);
+        $sheet->setCellValue('D9', $fibraOrder->entre_calles);
+        $sheet->setCellValue('D10', $fibraOrder->colonia);
+
         $sheet->setCellValue('B11', 'EDIFICIO:');
-        $sheet->setCellValue('D11', 'DEPTO:');
-        $sheet->setCellValue('F11', 'PORTALERA:');
+        $sheet->setCellValue('E11', 'DEPTO:');
+        $sheet->setCellValue('H11', 'PORTALERA:');
+
+
+        $sheet->setCellValue('D11', $fibraOrder->edificio);
+        $sheet->setCellValue('F11', $fibraOrder->depto);
+        $sheet->setCellValue('I11', $fibraOrder->portalera);
+
+
+        $sheet->setCellValue('B12', 'DISTRITO');
+        $sheet->setCellValue('D12', 'TERMINAL');
+        $sheet->setCellValue('F12', 'PUERTO');
+        $sheet->setCellValue('H12', 'POTENCIA');
+        $sheet->setCellValue('J12', 'NAVEGACION');
+
+        $sheet->setCellValue('B13', $fibraOrder->distrito);
+        $sheet->setCellValue('D13', $fibraOrder->terminal);
+        $sheet->setCellValue('F13', $fibraOrder->puerto);
+        $sheet->setCellValue('H13', $fibraOrder->potencia);
+        $sheet->setCellValue('J13', $fibraOrder->navegacion);
+
+
+        $sheet->setCellValue('D14', 'MATERIAL INSTALADO');
+        $sheet->setCellValue('J14', 'TIPO Y LOGITUD DE INSTALACIÓN');
 
 
 
-       
-       
-       
+        $sheet->setCellValue('B15', 'Argolla Caja Exedente');
+        $sheet->setCellValue('B16', 'Cierre Conexión');
+        $sheet->setCellValue('B17', 'Cincho Negro');
+        $sheet->setCellValue('B18', 'Clip adherible');
+        $sheet->setCellValue('B19', 'Cadena de Distribucion');
+        $sheet->setCellValue('B20', 'Argolla Fleje');
+        
+        $sheet->setCellValue('D15', 'Conector Mecanico');
+        $sheet->setCellValue('D16', 'ONT');
+        $sheet->setCellValue('D17', 'Roceta Optica');
+        $sheet->setCellValue('D18', 'Sello Pasa Muro');
+        $sheet->setCellValue('D19', 'Sujetador Clavo');
+        $sheet->setCellValue('D20', 'Taquete');
+        $sheet->setCellValue('D21', 'Cierre Conexión');
+
+        $sheet->setCellValue('F15', 'Gancho Tensor');
+        $sheet->setCellValue('F16', 'Cinta de Aislar');
+        $sheet->setCellValue('F17', 'Cordones Telmex');
+        $sheet->setCellValue('F18', 'Cordones Huawei');
+
+        $sheet->setCellValue('H15', 'CORDONES TELMEX');
+        $sheet->setCellValue('H16', 'LOGITUD ACUM');
+        $sheet->setCellValue('H17', 'FIBRA DE 25 M');
+        $sheet->setCellValue('H18', 'FIBRA DE 50 M');
+        $sheet->setCellValue('H19', 'FIBRA DE 75 M');
+        $sheet->setCellValue('H20', 'FIBRA DE 100 M');
+        $sheet->setCellValue('H21', 'FIBRA DE 125 M');
+        $sheet->setCellValue('H21', 'METAL E/BOBINA');
+
 
         $writer = new Xlsx($spreadsheet);
         header('Content-Type: application/vnd.ms-excel');
