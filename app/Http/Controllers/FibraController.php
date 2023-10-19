@@ -465,18 +465,41 @@ class FibraController extends Controller
         $sheet->setCellValue('F17', 'Cordones Telmex');
         $sheet->setCellValue('F18', 'Cordones Huawei');
 
-        $sheet->setCellValue('H15', 'CORDONES TELMEX');
-        $sheet->setCellValue('H16', 'LOGITUD ACUM');
-        $sheet->setCellValue('H17', 'FIBRA DE 25 M');
-        $sheet->setCellValue('H18', 'FIBRA DE 50 M');
-        $sheet->setCellValue('H19', 'FIBRA DE 75 M');
-        $sheet->setCellValue('H20', 'FIBRA DE 100 M');
-        $sheet->setCellValue('H21', 'FIBRA DE 125 M');
-        $sheet->setCellValue('H21', 'METAL E/BOBINA');
+        $sheet->setCellValue('H15', 'NEGOCIO');
+        $sheet->setCellValue('H16', 'CASA');
+        $sheet->setCellValue('H17', 'EDIFICIOS');
+        $sheet->setCellValue('H18', 'PLAZA');
+        $sheet->setCellValue('H19', 'RESIDENCIAL');
+        $sheet->setCellValue('H20', 'AEREA');
+        $sheet->setCellValue('H21', 'SUBTERRANEA');
+       
+        $sheet->setCellValue('I15', (isset($fibraOrder->tipo_negocio ) &&$fibraOrder->tipo_negocio ==1 )? '✓': '');
+        $sheet->setCellValue('I16', (isset($fibraOrder->tipo_casa ) &&$fibraOrder->tipo_casa ==1 )? '✓': '' );
+        $sheet->setCellValue('I17', (isset($fibraOrder->tipo_edificios ) &&$fibraOrder->tipo_edificios ==1 )? '✓': '' );
+        $sheet->setCellValue('I18', (isset($fibraOrder->tipo_plaza ) &&$fibraOrder->tipo_plaza ==1 )? '✓': '' );
+        $sheet->setCellValue('I19', (isset($fibraOrder->tipo_residencial ) &&$fibraOrder->tipo_residencial ==1 )? '✓': '' );
+        $sheet->setCellValue('I20', (isset($fibraOrder->tipo_aerea ) &&$fibraOrder->tipo_aerea ==1 )? '✓': '' );
+        $sheet->setCellValue('I21', (isset($fibraOrder->tipo_subterraneo ) &&$fibraOrder->tipo_subterraneo ==1 )? '✓': '' );
+        $sheet->setCellValue('I22', $fibraOrder->longitud_acum_tel );
+
+        $sheet->setCellValue('J15', 'LOGITUD ACUM');
+        $sheet->setCellValue('J16', 'FIBRA DE 25M');
+        $sheet->setCellValue('J17', 'FIBRA DE 50M');
+        $sheet->setCellValue('J18', 'FIBRA DE 75M');
+        $sheet->setCellValue('J19', 'FIBRA DE 100M');
+        $sheet->setCellValue('J20', 'FIBRA DE 125M');
+        $sheet->setCellValue('J21', 'METRA E/BOBINA');
 
 
-        $writer = new Xlsx($spreadsheet);
-        header('Content-Type: application/vnd.ms-excel');
+        $sheet->setCellValue('L15', 'LOGITUD ACUM');
+        $sheet->setCellValue('L16', 'CORD PREC 25M');
+        $sheet->setCellValue('L17', 'CORD PREC 50M');
+        $sheet->setCellValue('L18', 'CORD PREC 80M');
+        $sheet->setCellValue('L19', 'CORD PREC 100M');
+        $sheet->setCellValue('L20', 'CORD PREC 120M');
+        $sheet->setCellValue('L21', 'CORD PREC 150M');
+        $sheet->setCellValue('L21', 'CORD PREC 200M');
+
         header('Content-Disposition: attachment;filename="' . 'ORDEN FIBRA ' . strtoupper($fibraOrder->id) . '.xls');
         header('Cache-Control: max-age=0');
           
