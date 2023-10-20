@@ -23,9 +23,8 @@
                 Agregar
             </a>
         </div>
-
-
-        <table  id="miTabla" class="table-auto w-full">
+        
+        <table  class="table-auto w-full">
             <thead>
                 <tr> 
                     <th class="text-left">Número de O.S.</th>
@@ -89,7 +88,7 @@
     
     @section('scripts')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.js"></script>
+  
 
     @endsection
 </div>

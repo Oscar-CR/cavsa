@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing;
 
 class FibraController extends Controller
 {
@@ -381,6 +382,22 @@ class FibraController extends Controller
 
         //Datos en celdas
 
+        $imagePath = asset('/img/infinitum_con.png');
+
+        // Crear un objeto Drawing (imagen) y configurar sus propiedades
+        $drawing = new MemoryDrawing();
+        $drawing->setName('Imagen');
+        $drawing->setDescription('Descripción de la imagen');
+        $drawing->setImageResource(imagecreatefrompng($imagePath));
+        $drawing->setRenderingFunction(MemoryDrawing::RENDERING_PNG);
+        $drawing->setMimeType(MemoryDrawing::MIMETYPE_PNG);
+        $drawing->setCoordinates('D1'); // Coordenadas donde se ubicará la imagen en la celda D1.
+
+        // Agregar la imagen a la hoja de cálculo.
+        $drawing->setWorksheet($sheet);
+
+    
+
         $sheet->setCellValue('B3', 'ORDEN DE SERVICIO:');
         $sheet->setCellValue('B4', 'TELEFONO:');
         $sheet->setCellValue('B5', 'TIPO O.S.:');
@@ -452,6 +469,14 @@ class FibraController extends Controller
         $sheet->setCellValue('B19', 'Cadena de Distribucion');
         $sheet->setCellValue('B20', 'Argolla Fleje');
         
+        $sheet->setCellValue('C15', $fibraOrder->argolla_caja_exedente);
+        $sheet->setCellValue('C16', $fibraOrder->cierre_conexion);
+        $sheet->setCellValue('C17', $fibraOrder->cincho_negro);
+        $sheet->setCellValue('C18', $fibraOrder->clip_adherible);
+        $sheet->setCellValue('C19', $fibraOrder->cadena_distribucion);
+        $sheet->setCellValue('C20', $fibraOrder->argolla_fleje);
+
+
         $sheet->setCellValue('D15', 'Conector Mecanico');
         $sheet->setCellValue('D16', 'ONT');
         $sheet->setCellValue('D17', 'Roceta Optica');
@@ -460,10 +485,23 @@ class FibraController extends Controller
         $sheet->setCellValue('D20', 'Taquete');
         $sheet->setCellValue('D21', 'Cierre Conexión');
 
+        $sheet->setCellValue('E15', $fibraOrder->conector_mecanico);
+        $sheet->setCellValue('E16', $fibraOrder->ont);
+        $sheet->setCellValue('E17', $fibraOrder->roceta_optica);
+        $sheet->setCellValue('E18', $fibraOrder->sello_pasa_muro);
+        $sheet->setCellValue('E19', $fibraOrder->sujetador_clavo);
+        $sheet->setCellValue('E20', $fibraOrder->taquete);
+        $sheet->setCellValue('E20', $fibraOrder->gancho_tensor);
+
         $sheet->setCellValue('F15', 'Gancho Tensor');
         $sheet->setCellValue('F16', 'Cinta de Aislar');
         $sheet->setCellValue('F17', 'Cordones Telmex');
         $sheet->setCellValue('F18', 'Cordones Huawei');
+
+        $sheet->setCellValue('H15', $fibraOrder->gancho_tensor);
+        $sheet->setCellValue('H16', $fibraOrder->cinta_aislar);
+        $sheet->setCellValue('H17', $fibraOrder->cordones_telmex);
+        $sheet->setCellValue('H18', $fibraOrder->cordones_huawei);
 
         $sheet->setCellValue('H15', 'NEGOCIO');
         $sheet->setCellValue('H16', 'CASA');
@@ -483,22 +521,49 @@ class FibraController extends Controller
         $sheet->setCellValue('I22', $fibraOrder->longitud_acum_tel );
 
         $sheet->setCellValue('J15', 'LOGITUD ACUM');
-        $sheet->setCellValue('J16', 'FIBRA DE 25M');
-        $sheet->setCellValue('J17', 'FIBRA DE 50M');
-        $sheet->setCellValue('J18', 'FIBRA DE 75M');
-        $sheet->setCellValue('J19', 'FIBRA DE 100M');
-        $sheet->setCellValue('J20', 'FIBRA DE 125M');
+        $sheet->setCellValue('J16', 'FIBRA DE 25 M');
+        $sheet->setCellValue('J17', 'FIBRA DE 50 M');
+        $sheet->setCellValue('J18', 'FIBRA DE 75 M');
+        $sheet->setCellValue('J19', 'FIBRA DE 100 M');
+        $sheet->setCellValue('J20', 'FIBRA DE 125 M');
         $sheet->setCellValue('J21', 'METRA E/BOBINA');
 
+        $sheet->setCellValue('K15', $fibraOrder->longitud_acum_tel);
+        $sheet->setCellValue('K16', $fibraOrder->fibra_25m_tel);
+        $sheet->setCellValue('K17', $fibraOrder->fibra_50m_tel);
+        $sheet->setCellValue('K18', $fibraOrder->fibra_75m_tel);
+        $sheet->setCellValue('K19', $fibraOrder->fibra_100m_tel);
+        $sheet->setCellValue('K20', $fibraOrder->fibra_125m_tel);
+        $sheet->setCellValue('K21', $fibraOrder->metral_bobina_tel);
+       
 
         $sheet->setCellValue('L15', 'LOGITUD ACUM');
-        $sheet->setCellValue('L16', 'CORD PREC 25M');
-        $sheet->setCellValue('L17', 'CORD PREC 50M');
-        $sheet->setCellValue('L18', 'CORD PREC 80M');
-        $sheet->setCellValue('L19', 'CORD PREC 100M');
-        $sheet->setCellValue('L20', 'CORD PREC 120M');
-        $sheet->setCellValue('L21', 'CORD PREC 150M');
-        $sheet->setCellValue('L21', 'CORD PREC 200M');
+        $sheet->setCellValue('L16', 'CORD. PREC. 25 M');
+        $sheet->setCellValue('L17', 'CORD. PREC. 50 M');
+        $sheet->setCellValue('L18', 'CORD. PREC. 80 M');
+        $sheet->setCellValue('L19', 'CORD. PREC. 100 M');
+        $sheet->setCellValue('L20', 'CORD. PREC. 120 M');
+        $sheet->setCellValue('L21', 'CORD. PREC. 150 M');
+        $sheet->setCellValue('L22', 'CORD. PREC. 200 M');
+
+        $sheet->setCellValue('M15', $fibraOrder->longitud_acum_huawei);
+        $sheet->setCellValue('M16', $fibraOrder->cord_prec_25m_huawei);
+        $sheet->setCellValue('M17', $fibraOrder->cord_prec_50m_huawei);
+        $sheet->setCellValue('M18', $fibraOrder->cord_prec_80m_huawei);
+        $sheet->setCellValue('M19', $fibraOrder->cord_prec_100m_huawei);
+        $sheet->setCellValue('M20', $fibraOrder->cord_prec_120m_huawei);
+        $sheet->setCellValue('M21', $fibraOrder->cord_prec_150m_huawei);
+        $sheet->setCellValue('M22', $fibraOrder->cord_prec_200m_huawei);
+
+        $sheet->setCellValue('G24', 'DATOS DE LA ONT INSTALADA');
+
+        $sheet->setCellValue('B25', 'NUMERO DE SERIE:');
+        $sheet->setCellValue('B26', 'ALFANUMERICO:');
+        $sheet->setCellValue('B27', 'KEY:');
+        $sheet->setCellValue('B28', 'Nº ONT DE COBRE:');
+        $sheet->setCellValue('B29', 'OBSERVACIONES:');
+        $sheet->setCellValue('B31', 'CORREO ELECTRONICO:');
+
 
         header('Content-Disposition: attachment;filename="' . 'ORDEN FIBRA ' . strtoupper($fibraOrder->id) . '.xls');
         header('Cache-Control: max-age=0');
