@@ -14,7 +14,7 @@ class CobreController extends Controller
         if(auth()->user()->hasRole('admin')){
             $cobreOrders = CobreOrder::simplePaginate(15);
         }else{
-            $cobreOrders = CobreOrder::where('id', Auth()->user()->id)->get()->simplePaginate(15);
+            $cobreOrders = CobreOrder::where('id', Auth()->user()->id)->get();
         }
         
         return view('cobre.index', compact('cobreOrders'));
