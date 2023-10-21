@@ -50,6 +50,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/cobre-update', [CobreController::class, 'cobreUpdate'])->name('home.cobre.update');
     Route::delete('/cobre-delete', [CobreController::class, 'cobreDelete'])->name('home.cobre.delete');
 
+    Route::post('/cobre-xlsx', [CobreController::class, 'cobreXLSX'])->name('home.cobre.xlsx');
+
     
     Route::get('/user', [UserController::class, 'user'])->name('admin.user');
     Route::get('/user-create', [UserController::class, 'userCreate'])->name('admin.user.create');

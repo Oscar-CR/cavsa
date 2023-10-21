@@ -621,6 +621,19 @@ class FibraController extends Controller
         $sheet->setCellValue('M34', $fibraOrder->cord_prec_200m_huawei);
 
         $sheet->setCellValue('G35', 'DATOS DE LA ONT INSTALADA');
+        $sheet->setCellValue('F40', 'Estimado cliente!');
+        $sheet->setCellValue('H40', '¿El técnico le ofrecio los siguientes productos Telmex para mejorar la experiencia INFINITUM de su hogar?');
+        $sheet->setCellValue('F41', '1) Incremento la velocidad de navegación (cambio de paquete)');
+        $sheet->setCellValue('F42', '2) Extensor de señan WI-FI');
+        $sheet->setCellValue('F43', '3) Router');
+
+        $sheet->setCellValue('K41', 'Si');
+        $sheet->setCellValue('K42', 'Si');
+        $sheet->setCellValue('K43', 'Si');
+
+        $sheet->setCellValue('L41', 'NO');
+        $sheet->setCellValue('L42', 'NO');
+        $sheet->setCellValue('L43', 'NO');
 
         $sheet->setCellValue('B36', 'NUMERO DE SERIE:');
         $sheet->setCellValue('B37', 'ALFANUMERICO:');

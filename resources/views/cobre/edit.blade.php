@@ -15,7 +15,7 @@
             </div>
         </div>
         
-        <form action="{{ route('home.cobre.store') }}" method="POST">
+        <form action="{{ route('home.cobre.update', ['id'=>$cobreOrder->id]) }}" method="POST">
         @csrf
 
             <!-- Sección 1 -->

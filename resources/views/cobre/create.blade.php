@@ -663,9 +663,9 @@
                             </div>
                             <div class="pt-4 mr-8">
                                 <input type="radio" id="si" name="activado" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                                <label for="si" class="mr-4">Si</label>
+                                <label for="si" class="mr-4">No</label>
                                 <input type="radio" id="no" name="activado" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]">
-                                <label for="no">No</label>
+                                <label for="no">Si</label>
                             </div>
                         </div>
                         
