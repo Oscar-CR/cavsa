@@ -6,8 +6,10 @@ use App\Models\FibraOrder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 use PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing;
 
 class FibraController extends Controller
@@ -213,9 +215,22 @@ class FibraController extends Controller
         $styleRows = [
             'borders' => [
                 'outline' => [
-                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
                     'color' => ['argb' => 'FF000000'],
                 ],
+            ],
+        ];
+
+        $titleStyleRows = [
+            'borders' => [
+                'outline' => [
+                    'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_MEDIUM,
+                    'color' => ['argb' => 'FF000000'],
+                ],
+            ],
+            'fill' => [
+                'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
+                'startColor' => array('argb' => 'FFe0e0e0')
             ],
         ];
 
@@ -234,6 +249,9 @@ class FibraController extends Controller
         $spreadsheet->getActiveSheet()->getColumnDimension('M')->setWidth(6);
 
         //Estilo aplicado a celda
+
+        $sheet->getStyle('B3:M3')->applyFromArray($titleStyleRows);
+        $sheet->getStyle('B24:M24')->applyFromArray($titleStyleRows);
         $sheet->getStyle('B4:B6')->applyFromArray($styleRows);
 
         $sheet->getStyle('C4:D4')->applyFromArray($styleRows);
@@ -291,6 +309,14 @@ class FibraController extends Controller
         $sheet->getStyle('B19')->applyFromArray($styleRows);
         $sheet->getStyle('B20')->applyFromArray($styleRows);
         $sheet->getStyle('B21')->applyFromArray($styleRows);
+        $sheet->getStyle('B25')->applyFromArray($styleRows);
+        $sheet->getStyle('B26')->applyFromArray($styleRows);
+        $sheet->getStyle('B27')->applyFromArray($styleRows);
+        $sheet->getStyle('B28')->applyFromArray($styleRows);
+        $sheet->getStyle('B29:E30')->applyFromArray($styleRows);
+        $sheet->getStyle('B31:E31')->applyFromArray($styleRows);
+        $sheet->getStyle('B32:E32')->applyFromArray($styleRows);
+        $sheet->getStyle('B33:E33')->applyFromArray($styleRows);
 
         $sheet->getStyle('C15')->applyFromArray($styleRows);
         $sheet->getStyle('C16')->applyFromArray($styleRows);
@@ -299,6 +325,11 @@ class FibraController extends Controller
         $sheet->getStyle('C19')->applyFromArray($styleRows);
         $sheet->getStyle('C20')->applyFromArray($styleRows);
         $sheet->getStyle('C21')->applyFromArray($styleRows);
+        $sheet->getStyle('C25:F25')->applyFromArray($styleRows);
+        $sheet->getStyle('C26:F26')->applyFromArray($styleRows);
+        $sheet->getStyle('C27:F27')->applyFromArray($styleRows);
+        $sheet->getStyle('C28:F28')->applyFromArray($styleRows);
+
 
         $sheet->getStyle('D15')->applyFromArray($styleRows);
         $sheet->getStyle('D16')->applyFromArray($styleRows);
@@ -324,6 +355,12 @@ class FibraController extends Controller
         $sheet->getStyle('F19')->applyFromArray($styleRows);
         $sheet->getStyle('F20')->applyFromArray($styleRows);
         $sheet->getStyle('F21')->applyFromArray($styleRows);
+        $sheet->getStyle('F29:M29')->applyFromArray($styleRows);
+        $sheet->getStyle('F30:M30')->applyFromArray($styleRows);
+        $sheet->getStyle('F31:M31')->applyFromArray($styleRows);
+        $sheet->getStyle('F32:M32')->applyFromArray($styleRows);
+        $sheet->getStyle('F33:M33')->applyFromArray($styleRows);
+
 
         $sheet->getStyle('G15')->applyFromArray($styleRows);
         $sheet->getStyle('G16')->applyFromArray($styleRows);
@@ -332,6 +369,11 @@ class FibraController extends Controller
         $sheet->getStyle('G19')->applyFromArray($styleRows);
         $sheet->getStyle('G20')->applyFromArray($styleRows);
         $sheet->getStyle('G21')->applyFromArray($styleRows);
+        $sheet->getStyle('G25:M25')->applyFromArray($styleRows);
+        $sheet->getStyle('G26:M26')->applyFromArray($styleRows);
+        $sheet->getStyle('G27:M28')->applyFromArray($styleRows);
+       
+
 
         $sheet->getStyle('H15')->applyFromArray($styleRows);
         $sheet->getStyle('H16')->applyFromArray($styleRows);
@@ -340,6 +382,8 @@ class FibraController extends Controller
         $sheet->getStyle('H19')->applyFromArray($styleRows);
         $sheet->getStyle('H20')->applyFromArray($styleRows);
         $sheet->getStyle('H21')->applyFromArray($styleRows);
+        $sheet->getStyle('H22')->applyFromArray($styleRows);
+
 
         $sheet->getStyle('I15')->applyFromArray($styleRows);
         $sheet->getStyle('I16')->applyFromArray($styleRows);
@@ -348,6 +392,7 @@ class FibraController extends Controller
         $sheet->getStyle('I19')->applyFromArray($styleRows);
         $sheet->getStyle('I20')->applyFromArray($styleRows);
         $sheet->getStyle('I21')->applyFromArray($styleRows);
+        $sheet->getStyle('I22')->applyFromArray($styleRows);
 
         $sheet->getStyle('J15:K15')->applyFromArray($styleRows);
         $sheet->getStyle('J16')->applyFromArray($styleRows);
@@ -356,6 +401,9 @@ class FibraController extends Controller
         $sheet->getStyle('J19')->applyFromArray($styleRows);
         $sheet->getStyle('J20')->applyFromArray($styleRows);
         $sheet->getStyle('J21')->applyFromArray($styleRows);
+        $sheet->getStyle('J22')->applyFromArray($styleRows);
+        $sheet->getStyle('J23:K23')->applyFromArray($styleRows);
+
 
         $sheet->getStyle('K16')->applyFromArray($styleRows);
         $sheet->getStyle('K17')->applyFromArray($styleRows);
@@ -363,6 +411,8 @@ class FibraController extends Controller
         $sheet->getStyle('K19')->applyFromArray($styleRows);
         $sheet->getStyle('K20')->applyFromArray($styleRows);
         $sheet->getStyle('K21')->applyFromArray($styleRows);
+        $sheet->getStyle('K22')->applyFromArray($styleRows);
+
 
         $sheet->getStyle('L15:M15')->applyFromArray($styleRows);
         $sheet->getStyle('L16')->applyFromArray($styleRows);
@@ -371,34 +421,41 @@ class FibraController extends Controller
         $sheet->getStyle('L19')->applyFromArray($styleRows);
         $sheet->getStyle('L20')->applyFromArray($styleRows);
         $sheet->getStyle('L21')->applyFromArray($styleRows);
-
+        $sheet->getStyle('L22')->applyFromArray($styleRows);
+        $sheet->getStyle('L23')->applyFromArray($styleRows);
+        
         $sheet->getStyle('M16')->applyFromArray($styleRows);
         $sheet->getStyle('M17')->applyFromArray($styleRows);
         $sheet->getStyle('M18')->applyFromArray($styleRows);
         $sheet->getStyle('M19')->applyFromArray($styleRows);
         $sheet->getStyle('M20')->applyFromArray($styleRows);
         $sheet->getStyle('M21')->applyFromArray($styleRows);
+        $sheet->getStyle('M22')->applyFromArray($styleRows);
+        $sheet->getStyle('M23')->applyFromArray($styleRows);
 
 
-        //Datos en celdas
+        $imagePath = public_path('img/infinitum_con.png');
 
-        $imagePath = asset('/img/infinitum_con.png');
-
-        // Crear un objeto Drawing (imagen) y configurar sus propiedades
-        $drawing = new MemoryDrawing();
-        $drawing->setName('Imagen');
-        $drawing->setDescription('Descripción de la imagen');
-        $drawing->setImageResource(imagecreatefrompng($imagePath));
-        $drawing->setRenderingFunction(MemoryDrawing::RENDERING_PNG);
-        $drawing->setMimeType(MemoryDrawing::MIMETYPE_PNG);
-        $drawing->setCoordinates('D1'); // Coordenadas donde se ubicará la imagen en la celda D1.
-
-        // Agregar la imagen a la hoja de cálculo.
+        // Crear un objeto Drawing (imagen)
+        $drawing = new Drawing();
+        $drawing->setName('Image');
+        $drawing->setDescription('Image');
+        $drawing->setPath($imagePath);
+        $drawing->setCoordinates('D1'); 
+        $drawing->setOffsetX(1); 
+        $drawing->setOffsetY(1); 
         $drawing->setWorksheet($sheet);
 
     
-
-        $sheet->setCellValue('B3', 'ORDEN DE SERVICIO:');
+        $newWidth = 400; 
+        $newHeight = 200; 
+        
+        $drawing->setWidth($newWidth);
+        $drawing->setHeight($newHeight);
+        
+     
+        
+        $sheet->setCellValue('G3', 'ORDEN DE SERVICIO:');
         $sheet->setCellValue('B4', 'TELEFONO:');
         $sheet->setCellValue('B5', 'TIPO O.S.:');
         $sheet->setCellValue('B6', 'Nº DE O.S.:');
@@ -520,13 +577,14 @@ class FibraController extends Controller
         $sheet->setCellValue('I21', (isset($fibraOrder->tipo_subterraneo ) &&$fibraOrder->tipo_subterraneo ==1 )? '✓': '' );
         $sheet->setCellValue('I22', $fibraOrder->longitud_acum_tel );
 
-        $sheet->setCellValue('J15', 'LOGITUD ACUM');
-        $sheet->setCellValue('J16', 'FIBRA DE 25 M');
-        $sheet->setCellValue('J17', 'FIBRA DE 50 M');
-        $sheet->setCellValue('J18', 'FIBRA DE 75 M');
-        $sheet->setCellValue('J19', 'FIBRA DE 100 M');
-        $sheet->setCellValue('J20', 'FIBRA DE 125 M');
-        $sheet->setCellValue('J21', 'METRA E/BOBINA');
+        $sheet->setCellValue('J15', 'CORDONES TELMEX');
+        $sheet->setCellValue('J16', 'LOGITUD ACUM');
+        $sheet->setCellValue('J17', 'FIBRA DE 25 M');
+        $sheet->setCellValue('J18', 'FIBRA DE 50 M');
+        $sheet->setCellValue('J19', 'FIBRA DE 75 M');
+        $sheet->setCellValue('J20', 'FIBRA DE 100 M');
+        $sheet->setCellValue('J21', 'FIBRA DE 125 M');
+        $sheet->setCellValue('J22', 'METRA E/BOBINA');
 
         $sheet->setCellValue('K15', $fibraOrder->longitud_acum_tel);
         $sheet->setCellValue('K16', $fibraOrder->fibra_25m_tel);
@@ -536,15 +594,15 @@ class FibraController extends Controller
         $sheet->setCellValue('K20', $fibraOrder->fibra_125m_tel);
         $sheet->setCellValue('K21', $fibraOrder->metral_bobina_tel);
        
-
-        $sheet->setCellValue('L15', 'LOGITUD ACUM');
-        $sheet->setCellValue('L16', 'CORD. PREC. 25 M');
-        $sheet->setCellValue('L17', 'CORD. PREC. 50 M');
-        $sheet->setCellValue('L18', 'CORD. PREC. 80 M');
-        $sheet->setCellValue('L19', 'CORD. PREC. 100 M');
-        $sheet->setCellValue('L20', 'CORD. PREC. 120 M');
-        $sheet->setCellValue('L21', 'CORD. PREC. 150 M');
-        $sheet->setCellValue('L22', 'CORD. PREC. 200 M');
+        $sheet->setCellValue('L15', 'CORDONES HUAWEI');
+        $sheet->setCellValue('L16', 'LOGITUD ACUM');
+        $sheet->setCellValue('L17', 'CORD. PREC. 25 M');
+        $sheet->setCellValue('L18', 'CORD. PREC. 50 M');
+        $sheet->setCellValue('L19', 'CORD. PREC. 80 M');
+        $sheet->setCellValue('L20', 'CORD. PREC. 100 M');
+        $sheet->setCellValue('L21', 'CORD. PREC. 120 M');
+        $sheet->setCellValue('L22', 'CORD. PREC. 150 M');
+        $sheet->setCellValue('L23', 'CORD. PREC. 200 M');
 
         $sheet->setCellValue('M15', $fibraOrder->longitud_acum_huawei);
         $sheet->setCellValue('M16', $fibraOrder->cord_prec_25m_huawei);
@@ -563,6 +621,13 @@ class FibraController extends Controller
         $sheet->setCellValue('B28', 'Nº ONT DE COBRE:');
         $sheet->setCellValue('B29', 'OBSERVACIONES:');
         $sheet->setCellValue('B31', 'CORREO ELECTRONICO:');
+
+        $sheet->setCellValue('C25', $fibraOrder->numero_serie);
+        $sheet->setCellValue('C26', $fibraOrder->alfanumerico);
+        $sheet->setCellValue('C27', $fibraOrder->key);
+        $sheet->setCellValue('C28', $fibraOrder->ont_cobre);
+        $sheet->setCellValue('C29', $fibraOrder->observaciones);
+        $sheet->setCellValue('C31', $fibraOrder->correo_electronico);
 
 
         header('Content-Disposition: attachment;filename="' . 'ORDEN FIBRA ' . strtoupper($fibraOrder->id) . '.xls');
