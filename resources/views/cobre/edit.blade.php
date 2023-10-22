@@ -661,9 +661,9 @@
                                 <label for="si_no">Activado:</label>
                             </div>
                             <div class="pt-4 mr-8">
-                                <input type="radio" id="si" name="activado" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($cobreOrder->activado) && $cobreOrder->activado == 0) ? 'checked' : '' }}>
+                                <input type="radio" id="si" name="activado" value="Si" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($cobreOrder->activado) && $cobreOrder->activado == 1) ? 'checked' : '' }}>
                                 <label for="si" class="mr-4">Si</label>
-                                <input type="radio" id="no" name="activado" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($cobreOrder->activado) && $cobreOrder->activado == 1) ? 'checked' : '' }}>
+                                <input type="radio" id="no" name="activado" value="No" class="border shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-[#0172C2]" {{ (isset($cobreOrder->activado) && $cobreOrder->activado == 0) ? 'checked' : '' }}>
                                 <label for="no">No</label>
                             </div>
                         </div>

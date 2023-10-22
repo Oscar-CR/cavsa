@@ -12,6 +12,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 use PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class FibraController extends Controller
 {
@@ -657,5 +658,28 @@ class FibraController extends Controller
           
         $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xls');
         $writer->save('php://output');
+    }
+
+    public function fibraPDF(Request $request) {
+
+
+        $fibraOrder = FibraOrder::where('id',$request->id)->get()->first();
+        $user = User::where('id', $fibraOrder->user_id)->get()->first();
+
+      
+        $pdf = \PDF::loadView('fibra.pdf', ['fibraOrder' => $fibraOrder, 'user' => $user]);
+        $pdf->setPaper('Letter', 'portrait');
+        $filename = $fibraOrder->id. ".pdf";
+        $pdf->save(public_path($filename));
+   
+        return response()->download(public_path($filename))->deleteFileAfterSend(true);
+    }
+
+    public function fibraPDFTEST(){
+      
+        $fibraOrder = FibraOrder::where('id',1)->get()->first();
+        $user = User::where('id', $fibraOrder->user_id)->get()->first();
+
+        return view('fibra.pdf', compact('fibraOrder', 'user'));
     }
 }

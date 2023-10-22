@@ -41,6 +41,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/fibra-delete', [FibraController::class, 'fibraDelete'])->name('home.fibra.delete');
     
     Route::post('/fibra-xlsx', [FibraController::class, 'fibraXLSX'])->name('home.fibra.xlsx');
+    Route::post('/fibra-pdf', [FibraController::class, 'fibraPDF'])->name('home.fibra.pdf');
+    Route::get('/fibra-pdf-test', [FibraController::class, 'fibraPDFTEST'])->name('home.fibra.pdf-test');
 
 
     Route::get('/cobre', [CobreController::class, 'cobre'])->name('home.cobre');

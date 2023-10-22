@@ -51,7 +51,7 @@
                         <td>
                             <div class="flex">
                                 
-                            <form method="POST" action="{{ route('home.fibra.xlsx', ['id' => $fibraOrder->id ]) }}">
+                            <form method="POST" action="{{ route('home.fibra.pdf', ['id' => $fibraOrder->id ]) }}">
                                 @csrf
                                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                     PDF
