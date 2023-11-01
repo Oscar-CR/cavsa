@@ -551,7 +551,7 @@ class FibraController extends Controller
         $sheet->setCellValue('E29', $fibraOrder->sello_pasa_muro);
         $sheet->setCellValue('E30', $fibraOrder->sujetador_clavo);
         $sheet->setCellValue('E31', $fibraOrder->taquete);
-        $sheet->setCellValue('E32', $fibraOrder->gancho_tensor);
+        $sheet->setCellValue('E32', $fibraOrder->cierre_conexion);
 
         $sheet->setCellValue('F26', 'Gancho Tensor');
         $sheet->setCellValue('F27', 'Cinta de Aislar');
