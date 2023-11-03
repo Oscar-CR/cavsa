@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/cobre-delete', [CobreController::class, 'cobreDelete'])->name('home.cobre.delete');
 
     Route::post('/cobre-xlsx', [CobreController::class, 'cobreXLSX'])->name('home.cobre.xlsx');
+    Route::post('/cobre-pdf', [CobreController::class, 'cobrePDF'])->name('home.cobre.pdf');
 
     
     Route::get('/user', [UserController::class, 'user'])->name('admin.user');

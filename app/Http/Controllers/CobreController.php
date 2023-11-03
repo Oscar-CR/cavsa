@@ -685,4 +685,19 @@ class CobreController extends Controller
         $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xls');
         $writer->save('php://output');
     }
+    
+
+    public function cobrePDF(Request $request) {
+        
+        $cobreOrder = CobreOrder::where('id',$request->id)->get()->first();
+        $user = User::where('id', $cobreOrder->user_id)->get()->first();
+
+      
+        $pdf = \PDF::loadView('cobre.pdf', ['cobreOrder' => $cobreOrder, 'user' => $user]);
+        $pdf->setPaper('Letter', 'portrait');
+        $filename = $cobreOrder->id. ".pdf";
+        $pdf->save(public_path($filename));
+   
+        return response()->download(public_path($filename))->deleteFileAfterSend(true);
+    }
 }

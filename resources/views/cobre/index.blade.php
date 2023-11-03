@@ -50,7 +50,7 @@
                         <td>
                             <div class="flex">
                                 
-                                <form method="POST" action="{{ route('home.cobre.xlsx', ['id' => $cobreOrder->id ]) }}">
+                                <form method="POST" action="{{ route('home.cobre.pdf', ['id' => $cobreOrder->id ]) }}">
                                     @csrf
                                     <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                                         PDF
