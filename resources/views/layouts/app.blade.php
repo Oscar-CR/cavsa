@@ -15,23 +15,17 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    
-        <!-- Include your navigation here -->
-     
+    @isset($header)
+        <header class="bg-white ">
+            <div class="w-full">
+                {{ $header }}
+            </div>
+        </header>
+    @endisset
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white ">
-                    <div class="w-full">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
-
-        <!-- Page Content -->
-        <main class="bg-stone-50 w-full h-screen">
-            @yield('content')
-        </main>
- 
+    <main class="bg-stone-50 w-full ">
+        @yield('content')
+    </main>
+    @yield('scripts')
 </body>
 </html

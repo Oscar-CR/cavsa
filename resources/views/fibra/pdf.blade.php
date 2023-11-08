@@ -2,12 +2,17 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="Content-Type" content="charset=utf-8" />
     <title>Cotizacion</title>
     <link rel="stylesheet" href="quotesheet/bh/stylebh.css">
 </head>
 
 <body>
-   
+   <style>
+      *{
+            font-family:"DejaVu Sans Mono", monospace; 
+        }
+   </style>
     <div style="margin-left:30px; margin-right:30px; margin-top:8px;">
         
         

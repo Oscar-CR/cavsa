@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta http-equiv="Content-Type" content="charset=utf-8" />
     <title>Cotizacion</title>
     <link rel="stylesheet" href="quotesheet/bh/stylebh.css">
 </head>
 
 <body>
-   
+   <style>
+        *{
+            font-family:"DejaVu Sans Mono", monospace; 
+        }
+   </style>
     <div style="margin-left:30px; margin-right:30px; margin-top:8px;">
         
         
@@ -124,7 +128,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Cord Rojo/Blanco</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_rojo_blanco }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">NEGOCIO</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_negocio ) &&$cobreOrder->tipo_negocio ==1 )? '✓': ''}} </td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_negocio ) &&$cobreOrder->tipo_negocio ==1 )? '✔': ''}} </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORDONES TELMEX</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;"></td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORDONES HUAWEI</td>
@@ -138,7 +142,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Gancho Tensor</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->gancho_tensor }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CASA</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_casa ) &&$cobreOrder->tipo_casa ==1 )? '✓': ''}} </td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_casa ) &&$cobreOrder->tipo_casa ==1 )? '✔': ''}} </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">LOGITUD ACUM</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->longitud_acum_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">LOGITUD ACUM</td>
@@ -152,7 +156,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Cinta de Aislar</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cinta_de_aislar }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">EDIFICIOS</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_edificios ) &&$cobreOrder->tipo_edificios ==1 )? '✓': '' }}  </td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_edificios ) &&$cobreOrder->tipo_edificios ==1 )? '✔': '' }}  </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 25 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_25m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 25 M</td>
@@ -166,7 +170,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Tubo Ranurado</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->tubo_ranurado }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">PLAZA</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_plaza ) &&$cobreOrder->tipo_plaza ==1 )? '✓': '' }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_plaza ) &&$cobreOrder->tipo_plaza ==1 )? '✔': '' }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 50 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_50m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 50 M</td>
@@ -180,7 +184,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Lubricante</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->lubricante }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">RESIDENCIAL</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_residencial ) &&$cobreOrder->tipo_residencial ==1 )? '✓': '' }} </td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_residencial ) &&$cobreOrder->tipo_residencial ==1 )? '✔': '' }} </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 75 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_75m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 80 M</td>
@@ -194,7 +198,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Cord Marfil (metros)</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_marfil_metros }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">AEREA</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_aerea ) &&$cobreOrder->tipo_aerea ==1 )? '✓': '' }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_aerea ) &&$cobreOrder->tipo_aerea ==1 )? '✔': '' }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 100 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_100m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 100 M</td>
@@ -208,7 +212,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">Longitud Acometida (mertos)</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->longitud_acometida_metros }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">SUBTERRANEA</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_subterraneo ) &&$cobreOrder->tipo_subterraneo ==1 )? '✓': '' }} </td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_subterraneo ) &&$cobreOrder->tipo_subterraneo ==1 )? '✔': '' }} </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 125 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_125m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 120 M</td>
@@ -222,7 +226,7 @@
             <td colspan="1" style="font-size: 8px;"></td>
             <td colspan="1" style="font-size: 8px;"></td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">SUBTERRANEA</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_subterraneo ) &&$cobreOrder->tipo_subterraneo ==1 )? '✓': '' }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_subterraneo ) &&$cobreOrder->tipo_subterraneo ==1 )? '✔': '' }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">METRA E/BOBINA</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->metral_bobina_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 150 M</td>
@@ -290,7 +294,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">NO</td>
         </tr>
         <tr>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->activado == 1? 'SI ✓    NO' : 'SI    NO  ✓' }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->activado == 1? 'SI /    NO' : 'SI    NO  /' }}</td>
             <td colspan="4" style="font-size: 8px; border: 1px solid black;"></td>
             <td colspan="5" style="font-size: 8px; border: 1px solid black;">3) Router</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;"></td>

@@ -225,6 +225,10 @@ class CobreController extends Controller
                     'color' => ['argb' => 'FF000000'],
                 ],
             ],
+            'font'  => array(
+                'size'  => 10,
+                'name'  => 'DeJaVu Sans Mono'
+            )
         ];
 
         $titleStyleRows = [
@@ -238,6 +242,11 @@ class CobreController extends Controller
                 'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                 'startColor' => array('argb' => 'FFe0e0e0')
             ],
+            'font'  => array(
+                'bold'  => true,
+                'size'  => 10,
+                'name'  => 'DeJaVu Sans Mono'
+            )
         ];
 
         //Tamano
@@ -679,7 +688,7 @@ class CobreController extends Controller
         $sheet->setCellValue('C43', $cobreOrder->clarovideo);
 
 
-        header('Content-Disposition: attachment;filename="' . 'ORDEN FIBRA ' . strtoupper($cobreOrder->id) . '.xls');
+        header('Content-Disposition: attachment;filename="' . 'Cobre- ' . strtoupper($cobreOrder->id) . '.xls');
         header('Cache-Control: max-age=0');
           
         $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xls');
@@ -695,7 +704,7 @@ class CobreController extends Controller
       
         $pdf = \PDF::loadView('cobre.pdf', ['cobreOrder' => $cobreOrder, 'user' => $user]);
         $pdf->setPaper('Letter', 'portrait');
-        $filename = $cobreOrder->id. ".pdf";
+        $filename = 'Cobre-'. $cobreOrder->id. ".pdf";
         $pdf->save(public_path($filename));
    
         return response()->download(public_path($filename))->deleteFileAfterSend(true);

@@ -221,6 +221,10 @@ class FibraController extends Controller
                     'color' => ['argb' => 'FF000000'],
                 ],
             ],
+            'font'  => array(
+                'size'  => 10,
+                'name'  => 'DeJaVu Sans Mono'
+            )
         ];
 
         $titleStyleRows = [
@@ -234,6 +238,11 @@ class FibraController extends Controller
                 'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                 'startColor' => array('argb' => 'FFe0e0e0')
             ],
+            'font'  => array(
+                'bold'  => true,
+                'size'  => 10,
+                'name'  => 'DeJaVu Sans Mono'
+            )
         ];
 
         //Tamano
