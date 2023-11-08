@@ -158,7 +158,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">EDIFICIOS</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_edificios ) &&$cobreOrder->tipo_edificios ==1 )? '✔': '' }}  </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 25 M</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_25m_tel }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cobre_25m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 25 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_prec_25m_huawei }}</td>
         </tr>
@@ -172,7 +172,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">PLAZA</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_plaza ) &&$cobreOrder->tipo_plaza ==1 )? '✔': '' }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 50 M</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_50m_tel }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cobre_50m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 50 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_prec_50m_huawei }}  </td>
         </tr>
@@ -186,7 +186,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">RESIDENCIAL</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_residencial ) &&$cobreOrder->tipo_residencial ==1 )? '✔': '' }} </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 75 M</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_75m_tel }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cobre_75m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 80 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_prec_80m_huawei }} </td>
         </tr>
@@ -200,7 +200,7 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">AEREA</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_aerea ) &&$cobreOrder->tipo_aerea ==1 )? '✔': '' }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 100 M</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_100m_tel }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cobre_100m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 100 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_prec_100m_huawei }}</td>
         </tr>
@@ -214,17 +214,17 @@
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">SUBTERRANEA</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_subterraneo ) &&$cobreOrder->tipo_subterraneo ==1 )? '✔': '' }} </td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">FIBRA DE 125 M</td>
-            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->fibra_125m_tel }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cobre_125m_tel }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">CORD. PREC. 120 M</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_prec_120m_huawei }}</td>
         </tr>
         <tr>
-            <td colspan="1" style="font-size: 8px;">Taquete</td>
-            <td colspan="1" style="font-size: 8px;">{{ $cobreOrder->taquete }}</td>
-            <td colspan="1" style="font-size: 8px;">Cord Naranja/Blanco</td>
-            <td colspan="1" style="font-size: 8px;">{{ $cobreOrder->cord_naranja_blanco }}</td>
-            <td colspan="1" style="font-size: 8px;"></td>
-            <td colspan="1" style="font-size: 8px;"></td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">Taquete</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->taquete }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">Cord Naranja/Blanco</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->cord_naranja_blanco }}</td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;"></td>
+            <td colspan="1" style="font-size: 8px; border: 1px solid black;"></td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">SUBTERRANEA</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">{{ (isset($cobreOrder->tipo_subterraneo ) &&$cobreOrder->tipo_subterraneo ==1 )? '✔': '' }}</td>
             <td colspan="1" style="font-size: 8px; border: 1px solid black;">METRA E/BOBINA</td>
@@ -278,7 +278,7 @@
         <tr>
             <td colspan="1" rowspan="2" style="font-size: 8px; border: 1px solid black;">OBSERVACIONES: <br> <br> <br> <br> </td>
             <td colspan="4" rowspan="2" style="font-size: 8px; border: 1px solid black;">{{ $cobreOrder->observaciones }} </td>
-            <td colspan="7" style="font-size: 8px; border: 1px solid black; background-color:#141414; color:white;"> <p><b style="font-size: 10px;">Estimado cliente!</b>  ¿El técnico le ofreció los siguientes productos Telmex para mejorar la experiencia INFINITUM en su hogar? </p> </td>
+            <td colspan="7" style="font-size: 8px; border: 1px solid black; background-color:#141414; color:white;"> <p><b style="font-size: 10px;">Estimado cliente!</b>  <b style="font-size: 6px;"> ¿El técnico le ofreció los siguientes productos Telmex para mejorar la experiencia INFINITUM en su hogar? </b> </p> </td>
         </tr>
         <tr>
           
